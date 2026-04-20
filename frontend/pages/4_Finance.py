@@ -1,166 +1,187 @@
 import streamlit as st
-from utils import get_db_connection, log_audit
-from styles import apply_styles
-from datetime import datetime
+import pandas as pd
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+from styles import inject, section_header, badge, metric_card
+from utils import get_sb, require_role, current_uid, audit, fmt, fmt_dt, can, ROLE_COLORS
 
-st.set_page_config(page_title="Finance", layout="wide")
-apply_styles()
+st.set_page_config(page_title="Finance — Duka", page_icon="◉", layout="wide")
+inject()
+require_role(["admin", "manager"])
 
-if 'authenticated' not in st.session_state or not st.session_state.authenticated:
-    st.warning("Please login from the home page")
-    st.stop()
+with st.sidebar:
+    from utils import current_role, logout
+    name = st.session_state.get("full_name", "User")
+    role = current_role()
+    st.markdown(f"""
+<div style="padding:12px 0;border-bottom:1px solid rgba(240,234,216,0.08);margin-bottom:8px">
+  <div style="font-family:Cormorant Garamond,serif;font-size:20px;color:#c8922a">Duka</div>
+</div>
+<div style="padding:8px 0;margin-bottom:8px">
+  <div style="font-size:12px;color:#f0ead8">{name}</div>
+  <div style="margin-top:4px">{badge(role.upper(), ROLE_COLORS.get(role,'neutral'))}</div>
+</div>""", unsafe_allow_html=True)
+    if st.button("Sign Out", use_container_width=True):
+        logout()
 
-st.title("💰 Finance Management")
+sb = get_sb()
+section_header("Finance", "P&L, payables & expense management")
 
-conn = get_db_connection()
+# ── Pull data ─────────────────────────────────────────────────
+orders   = sb.table("sales_orders").select("total_amount,status").neq("status","Cancelled").execute().data
+lines    = sb.table("order_lines").select("line_cogs").eq("is_voided", False).execute().data
+expenses = sb.table("expenses").select("amount").eq("is_voided", False).execute().data
+invoices = sb.table("purchase_invoices").select("landed_cost,suppliers(name)").eq("status","On Credit").eq("is_voided",False).execute().data
 
-# Tabs for finance sections
-tab1, tab2, tab3 = st.tabs(["P&L Statement", "Expenses", "Payables"])
+revenue   = sum(o["total_amount"] for o in orders)
+cogs      = sum(l["line_cogs"] for l in lines)
+gross     = revenue - cogs
+total_exp = sum(e["amount"] for e in expenses)
+net       = gross - total_exp
 
-with tab1:
-    st.subheader("Profit & Loss Statement")
-    
-    if conn:
-        # Date range selection
-        col1, col2 = st.columns(2)
-        with col1:
-            start_date = st.date_input("Start Date", value=datetime.now().replace(day=1))
-        with col2:
-            end_date = st.date_input("End Date", value=datetime.now())
-        
-        # Calculate revenue (completed orders)
-        revenue_result = conn.execute("""
-            SELECT SUM(total_amount) as total 
-            FROM orders 
-            WHERE status = 'completed' 
-            AND date(created_at) BETWEEN ? AND ?
-        """, (start_date, end_date)).fetchone()
-        total_revenue = revenue_result['total'] or 0
-        
-        # Calculate COGS (cost of goods sold from order items)
-        cogs_result = conn.execute("""
-            SELECT SUM(oi.quantity * p.cost) as total
-            FROM order_items oi
-            JOIN products p ON oi.product_id = p.id
-            JOIN orders o ON oi.order_id = o.id
-            WHERE o.status = 'completed'
-            AND date(o.created_at) BETWEEN ? AND ?
-        """, (start_date, end_date)).fetchone()
-        total_cogs = cogs_result['total'] or 0
-        
-        # Calculate gross profit
-        gross_profit = total_revenue - total_cogs
-        
-        # Get expenses
-        expenses_result = conn.execute("""
-            SELECT SUM(amount) as total 
-            FROM expenses 
-            WHERE date(date) BETWEEN ? AND ?
-        """, (start_date, end_date)).fetchone()
-        total_expenses = expenses_result['total'] or 0
-        
-        # Net profit
-        net_profit = gross_profit - total_expenses
-        
-        # Display P&L
-        st.markdown("### Revenue")
-        st.metric("Total Revenue", f"${total_revenue:.2f}")
-        
-        st.markdown("### Cost of Goods Sold")
-        st.metric("COGS", f"${total_cogs:.2f}")
-        
-        st.markdown("### Gross Profit")
-        st.metric("Gross Profit", f"${gross_profit:.2f}", delta=f"{(gross_profit/total_revenue*100) if total_revenue > 0 else 0:.1f}% Margin")
-        
-        st.markdown("### Operating Expenses")
-        st.metric("Total Expenses", f"${total_expenses:.2f}")
-        
-        st.markdown("### Net Profit")
-        st.metric("Net Profit", f"${net_profit:.2f}", delta="▲" if net_profit > 0 else "▼")
-        
-        # Visual breakdown
-        st.markdown("---")
-        st.markdown("### Financial Summary")
-        
-        if total_revenue > 0:
-            data = {
-                'Category': ['Revenue', 'COGS', 'Expenses', 'Net Profit'],
-                'Amount': [total_revenue, -total_cogs, -total_expenses, net_profit]
-            }
-            st.bar_chart(data, x='Category', y='Amount')
+# ── KPI metrics ───────────────────────────────────────────────
+cols = st.columns(5)
+kpis = [
+    ("Revenue",       fmt(revenue), "gold"),
+    ("COGS",          fmt(cogs),    "cream"),
+    ("Gross Profit",  fmt(gross),   "success" if gross >= 0 else "danger"),
+    ("Expenses",      fmt(total_exp), "danger"),
+    ("Net Profit",    fmt(net),     "success" if net >= 0 else "danger"),
+]
+for i, (label, value, color) in enumerate(kpis):
+    with cols[i]:
+        st.markdown(metric_card(label, value, color), unsafe_allow_html=True)
 
-with tab2:
-    st.subheader("Expense Management")
-    
-    # Add new expense
-    with st.expander("➕ Add New Expense"):
-        col1, col2 = st.columns(2)
-        with col1:
-            expense_category = st.selectbox(
-                "Category",
-                ["Rent", "Utilities", "Salaries", "Supplies", "Marketing", "Insurance", "Other"]
-            )
-            expense_amount = st.number_input("Amount", min_value=0.0, step=0.01)
-        with col2:
-            expense_date = st.date_input("Date", value=datetime.now())
-            expense_description = st.text_input("Description")
-        
-        if st.button("Record Expense"):
-            if conn and expense_amount > 0:
-                conn.execute(
-                    "INSERT INTO expenses (category, description, amount, date) VALUES (?, ?, ?, ?)",
-                    (expense_category, expense_description, expense_amount, expense_date)
-                )
-                conn.commit()
-                
-                log_audit(
-                    st.session_state.username,
-                    "EXPENSE_RECORD",
-                    f"Recorded expense: ${expense_amount:.2f} - {expense_category}"
-                )
-                
-                st.success("Expense recorded!")
-                st.rerun()
-    
-    # Expense list
-    st.markdown("### Expense History")
-    expenses = conn.execute("SELECT * FROM expenses ORDER BY date DESC").fetchall()
-    
-    if expenses:
-        st.dataframe(expenses, use_container_width=True)
-        
-        # Category breakdown
-        st.markdown("### Expenses by Category")
-        category_totals = {}
-        for exp in expenses:
-            cat = exp['category']
-            category_totals[cat] = category_totals.get(cat, 0) + exp['amount']
-        
-        st.write(category_totals)
+st.markdown("<hr>", unsafe_allow_html=True)
+
+tab_ap, tab_exp, tab_invoices = st.tabs(["Accounts Payable", "Expenses", "Purchase Invoices"])
+
+# ── Accounts Payable ─────────────────────────────────────────
+with tab_ap:
+    if invoices:
+        ap = {}
+        for inv in invoices:
+            name = inv["suppliers"]["name"] if inv.get("suppliers") else "Unknown"
+            ap[name] = ap.get(name, 0) + (inv["landed_cost"] or 0)
+        total_ap = sum(ap.values())
+
+        rows = "".join(f"""
+<tr>
+  <td style="color:#f0ead8;font-size:13px">{n}</td>
+  <td style="font-family:DM Mono,monospace;font-size:12px;color:#c0402a;text-align:right">{fmt(a)}</td>
+  <td style="font-size:11px;color:#5a5247;text-align:right">{(a/total_ap*100):.1f}%</td>
+</tr>""" for n, a in sorted(ap.items(), key=lambda x: -x[1]))
+
+        st.markdown(f"""
+<div style="background:#1c1916;border:1px solid rgba(240,234,216,0.08);border-radius:8px;overflow:hidden">
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr style="border-bottom:1px solid rgba(240,234,216,0.08)">
+      <th style="text-align:left;padding:10px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5a5247">Supplier</th>
+      <th style="text-align:right;padding:10px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5a5247">Owed</th>
+      <th style="text-align:right;padding:10px 14px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5a5247">Share</th>
+    </tr></thead>
+    <tbody>{rows}</tbody>
+    <tfoot><tr style="border-top:1px solid rgba(240,234,216,0.08)">
+      <td colspan="2" style="padding:10px 14px;font-family:Cormorant Garamond,serif;font-size:18px;color:#c0402a">Total Payable</td>
+      <td style="padding:10px 14px;font-family:DM Mono,monospace;font-size:13px;color:#c0402a;text-align:right">{fmt(total_ap)}</td>
+    </tr></tfoot>
+  </table>
+</div>""", unsafe_allow_html=True)
+
+        # Mark invoice as paid
+        if can("edit_orders"):
+            st.markdown("")
+            st.markdown('<h3 style="margin-top:8px">Mark Invoice Paid</h3>', unsafe_allow_html=True)
+            credit_invs = sb.table("purchase_invoices").select("invoice_id,quantity,purchase_price,freight_cost,suppliers(name),invoice_date").eq("status","On Credit").eq("is_voided",False).execute().data
+            if credit_invs:
+                inv_options = {f"{i.get('suppliers',{}).get('name','?')} — {fmt(i['purchase_price']+i['freight_cost'])} — {fmt_dt(i['invoice_date'])}": i for i in credit_invs}
+                with st.form("mark_paid"):
+                    sel = st.selectbox("Invoice", list(inv_options.keys()))
+                    if st.form_submit_button("Mark as Paid", type="primary"):
+                        inv = inv_options[sel]
+                        old = dict(inv)
+                        sb.table("purchase_invoices").update({"status":"Paid"}).eq("invoice_id",inv["invoice_id"]).execute()
+                        audit("purchase_invoices", inv["invoice_id"], "UPDATE", old_data=old, new_data={"status":"Paid"}, changed_fields=["status"], reason="Manually marked as paid")
+                        st.success("Invoice marked as paid."); st.rerun()
     else:
-        st.info("No expenses recorded yet")
+        st.success("No outstanding payables.")
 
-with tab3:
-    st.subheader("Accounts Payable")
-    
-    st.info("Accounts Payable module - Track outstanding vendor bills and payments")
-    
-    # Mock AP tracking (could be expanded with an AP table)
-    st.markdown("### Outstanding Payables")
-    
-    # Example payables (in production, this would come from a payables table)
-    payables_data = {
-        'Vendor': ['Supplier A', 'Supplier B', 'Utility Co'],
-        'Invoice #': ['INV-001', 'INV-002', 'INV-003'],
-        'Amount': [500.00, 750.00, 200.00],
-        'Due Date': ['2024-02-01', '2024-02-15', '2024-02-10'],
-        'Status': ['pending', 'pending', 'overdue']
-    }
-    
-    st.dataframe(payables_data, use_container_width=True)
-    
-    total_payable = sum(payables_data['Amount'])
-    st.metric("Total Payables", f"${total_payable:.2f}")
-    
-    if st.button("Record Payment"):
-        st.info("Payment recording functionality - Would integrate with expense tracking")
+# ── Expenses ─────────────────────────────────────────────────
+with tab_exp:
+    col1, col2 = st.columns([1, 1], gap="large")
+
+    with col1:
+        st.markdown('<h3>Log Expense</h3>', unsafe_allow_html=True)
+        with st.form("exp_form"):
+            exp_desc = st.text_input("Description")
+            c1, c2 = st.columns(2)
+            exp_amt  = c1.number_input("Amount", min_value=0.0)
+            exp_cat  = c2.selectbox("Category", ["Electricity","Transport","Rent","Salaries","Supplies","Other"])
+            if st.form_submit_button("Log Expense", type="primary", use_container_width=True):
+                if not exp_desc or not exp_amt:
+                    st.error("Description and amount required.")
+                else:
+                    res = sb.table("expenses").insert({
+                        "description": exp_desc, "amount": exp_amt,
+                        "category": exp_cat, "created_by": current_uid()
+                    }).execute().data[0]
+                    audit("expenses", res["expense_id"], "INSERT", new_data=res, reason="Expense logged")
+                    st.success("Logged!"); st.rerun()
+
+    with col2:
+        st.markdown('<h3>Recent Expenses</h3>', unsafe_allow_html=True)
+        all_exp = sb.table("expenses").select("*").order("expense_date", desc=True).limit(30).execute().data
+        for e in all_exp:
+            voided = e.get("is_voided", False)
+            c1, c2 = st.columns([4, 1])
+            c1.markdown(f"""
+<div style="{'opacity:0.4;' if voided else ''}padding:6px 0;border-bottom:1px solid rgba(240,234,216,0.06)">
+  <span style="font-size:13px;color:#f0ead8">{'~~' if voided else ''}{e['description']}{'~~' if voided else ''}</span>
+  <span style="font-family:DM Mono,monospace;font-size:11px;color:#c8922a;margin-left:8px">{fmt(e['amount'])}</span>
+  <span style="font-size:10px;color:#5a5247;margin-left:6px">{e.get('expense_date','')}</span>
+</div>""", unsafe_allow_html=True)
+            if not voided and can("delete_expense"):
+                if c2.button("Void", key=f"vexp_{e['expense_id']}"):
+                    old = dict(e)
+                    sb.table("expenses").update({"is_voided": True}).eq("expense_id", e["expense_id"]).execute()
+                    audit("expenses", e["expense_id"], "VOID", old_data=old, reason="Expense voided by admin")
+                    st.rerun()
+
+# ── Purchase Invoices ─────────────────────────────────────────
+with tab_invoices:
+    all_invs = sb.table("purchase_invoices").select("*,catalog(name),suppliers(name)").order("invoice_date", desc=True).limit(50).execute().data
+    if all_invs:
+        rows_html = ""
+        for inv in all_invs:
+            voided = inv.get("is_voided", False)
+            item_name = inv["catalog"]["name"] if inv.get("catalog") else "—"
+            sup_name  = inv["suppliers"]["name"] if inv.get("suppliers") else "—"
+            style = "opacity:0.4" if voided else ""
+            status_b = badge("VOIDED","danger") if voided else badge(inv["status"], "danger" if inv["status"]=="On Credit" else "success")
+            rows_html += f"""
+<tr style="{style}">
+  <td style="font-size:11px;font-family:DM Mono,monospace;color:#5a5247">{fmt_dt(inv['invoice_date'])}</td>
+  <td style="color:#f0ead8;font-size:13px">{item_name}</td>
+  <td style="font-size:12px;color:#9a8f7a">{sup_name}</td>
+  <td style="font-family:DM Mono,monospace;font-size:12px;text-align:right">{inv['quantity']}</td>
+  <td style="font-family:DM Mono,monospace;font-size:12px;color:#c8922a;text-align:right">{fmt(inv['landed_cost'])}</td>
+  <td>{status_b}</td>
+</tr>"""
+        st.markdown(f"""
+<div style="background:#1c1916;border:1px solid rgba(240,234,216,0.08);border-radius:8px;overflow:hidden">
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr style="border-bottom:1px solid rgba(240,234,216,0.08)">
+      <th style="padding:9px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5a5247;text-align:left">Date</th>
+      <th style="padding:9px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5a5247;text-align:left">Item</th>
+      <th style="padding:9px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5a5247;text-align:left">Supplier</th>
+      <th style="padding:9px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5a5247;text-align:right">Qty</th>
+      <th style="padding:9px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5a5247;text-align:right">Landed Cost</th>
+      <th style="padding:9px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5a5247">Status</th>
+    </tr></thead>
+    <tbody>{rows_html}</tbody>
+  </table>
+  </div>
+</div>""", unsafe_allow_html=True)
+    else:
+        st.info("No purchase invoices yet.")

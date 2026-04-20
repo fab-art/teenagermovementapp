@@ -139,7 +139,7 @@ section_header("Dashboard", f"Welcome back, {name}")
 sb = get_sb()
 
 # KPI row
-orders = sb.table("sales_orders").select("total_amount,deposit_paid,balance_due,status").execute().data
+orders = sb.table("sales_orders").select("total_amount,deposit_paid,balance_due,status").eq("is_active", True).execute().data
 inventory = sb.table("catalog").select("item_id").eq("is_active", True).execute().data
 lines = sb.table("order_lines").select("line_cogs").eq("is_voided", False).execute().data
 expenses = sb.table("expenses").select("amount").eq("is_voided", False).execute().data

@@ -19,23 +19,100 @@ if not current_user():
 
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        with st.form("login_form"):
-            st.markdown('<h3 style="margin-bottom:16px">Sign In</h3>', unsafe_allow_html=True)
-            email = st.text_input("Email")
-            password = st.text_input("Password", type="password")
-            submitted = st.form_submit_button("Sign In", type="primary", use_container_width=True)
+        # Tabbed interface for Sign In / Sign Up
+        tab_signin, tab_signup = st.tabs(["Sign In", "Sign Up"])
+        
+        with tab_signin:
+            with st.form("login_form"):
+                st.markdown('<h3 style="margin-bottom:16px">Sign In</h3>', unsafe_allow_html=True)
+                email = st.text_input("Email", key="signin_email")
+                password = st.text_input("Password", type="password", key="signin_password")
+                submitted = st.form_submit_button("Sign In", type="primary", use_container_width=True)
 
-        if submitted:
-            if not email or not password:
-                st.error("Enter email and password.")
-            else:
-                with st.spinner("Authenticating..."):
-                    try:
-                        profile = login(email, password)
-                        st.success(f"Welcome, {profile['full_name']}")
-                        st.rerun()
-                    except Exception as e:
-                        st.error(f"Login failed: {str(e)}")
+            if submitted:
+                if not email or not password:
+                    st.error("Enter email and password.")
+                else:
+                    with st.spinner("Authenticating..."):
+                        try:
+                            profile = login(email, password)
+                            st.success(f"Welcome, {profile['full_name']}")
+                            st.rerun()
+                        except Exception as e:
+                            st.error(f"Login failed: {str(e)}")
+            
+            # Google Sign In Button
+            st.markdown('<div style="margin:16px 0;text-align:center">— OR —</div>', unsafe_allow_html=True)
+            if st.button("🔐 Sign in with Google", use_container_width=True, type="secondary"):
+                try:
+                    sb = get_sb()
+                    # Get the OAuth URL for Google provider
+                    oauth_url = sb.auth.sign_in_with_oauth({
+                        'provider': 'google',
+                        'options': {
+                            'redirectTo': st.secrets.get("SUPABASE_REDIRECT_URL", os.environ.get("SUPABASE_REDIRECT_URL", ""))
+                        }
+                    })
+                    # Redirect user to Google OAuth
+                    st.redirect(oauth_url.url)
+                except Exception as e:
+                    st.error(f"Google sign-in failed: {str(e)}")
+        
+        with tab_signup:
+            with st.form("signup_form"):
+                st.markdown('<h3 style="margin-bottom:16px">Create Account</h3>', unsafe_allow_html=True)
+                signup_name = st.text_input("Full Name", key="signup_name")
+                signup_email = st.text_input("Email", key="signup_email")
+                signup_password = st.text_input("Password", type="password", key="signup_password", help="Minimum 6 characters")
+                signup_confirm = st.text_input("Confirm Password", type="password", key="signup_confirm")
+                submitted_signup = st.form_submit_button("Sign Up", type="primary", use_container_width=True)
+            
+            if submitted_signup:
+                if not signup_name or not signup_email or not signup_password:
+                    st.error("All fields are required.")
+                elif signup_password != signup_confirm:
+                    st.error("Passwords do not match.")
+                elif len(signup_password) < 6:
+                    st.error("Password must be at least 6 characters.")
+                else:
+                    with st.spinner("Creating account..."):
+                        try:
+                            sb = get_sb()
+                            # Create user via Supabase Auth
+                            res = sb.auth.sign_up({
+                                "email": signup_email,
+                                "password": signup_password,
+                                "options": {
+                                    "data": {"full_name": signup_name}
+                                }
+                            })
+                            user = res.user
+                            # Create profile entry
+                            sb.table("profiles").insert({
+                                "user_id": user.id,
+                                "full_name": signup_name,
+                                "role": "cashier"  # Default role for new signups
+                            }).execute()
+                            audit("profiles", user.id, "INSERT", new_data={"email": signup_email, "role": "cashier"}, reason="User self-registered")
+                            st.success("Account created! Please check your email to verify, or sign in below.")
+                        except Exception as e:
+                            st.error(f"Sign up failed: {str(e)}")
+            
+            # Google Sign Up Button
+            st.markdown('<div style="margin:16px 0;text-align:center">— OR —</div>', unsafe_allow_html=True)
+            if st.button("🔐 Sign up with Google", use_container_width=True, type="secondary", key="google_signup"):
+                try:
+                    sb = get_sb()
+                    oauth_url = sb.auth.sign_in_with_oauth({
+                        'provider': 'google',
+                        'options': {
+                            'redirectTo': st.secrets.get("SUPABASE_REDIRECT_URL", os.environ.get("SUPABASE_REDIRECT_URL", ""))
+                        }
+                    })
+                    st.redirect(oauth_url.url)
+                except Exception as e:
+                    st.error(f"Google sign-up failed: {str(e)}")
+    
     st.stop()
 
 # ── Authenticated ─────────────────────────────────────────────

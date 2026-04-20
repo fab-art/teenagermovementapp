@@ -1,61 +1,138 @@
 import streamlit as st
-from utils import authenticate, get_db_connection, log_audit
-from styles import apply_styles
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))
+from styles import inject, badge, section_header
+from utils import get_sb, login, logout, current_user, current_role, can, audit, fmt_dt, ROLE_COLORS
 
-def main():
-    st.set_page_config(page_title="ERP System", layout="wide")
-    apply_styles()
-    
-    if 'authenticated' not in st.session_state:
-        st.session_state.authenticated = False
-    
-    if not st.session_state.authenticated:
-        # Login Page
-        st.title("Welcome to ERP System")
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
-        
-        if st.button("Login"):
-            if authenticate(username, password):
-                st.session_state.authenticated = True
-                st.session_state.username = username
-                log_audit(username, "LOGIN", "User logged in successfully")
-                st.rerun()
+st.set_page_config(page_title="Duka ERP", page_icon="🪟", layout="wide")
+inject()
+
+# ── Login gate ────────────────────────────────────────────────
+if not current_user():
+    st.markdown("""
+<div style="max-width:420px;margin:6vh auto 0;">
+  <div style="text-align:center;margin-bottom:32px">
+    <div style="font-family:Cormorant Garamond,serif;font-size:42px;font-weight:600;color:#c8922a;letter-spacing:.1em">Duka</div>
+    <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#5a5247;margin-top:4px">Shop Management System</div>
+  </div>
+</div>""", unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        with st.form("login_form"):
+            st.markdown('<h3 style="margin-bottom:16px">Sign In</h3>', unsafe_allow_html=True)
+            email = st.text_input("Email")
+            password = st.text_input("Password", type="password")
+            submitted = st.form_submit_button("Sign In", type="primary", use_container_width=True)
+
+        if submitted:
+            if not email or not password:
+                st.error("Enter email and password.")
             else:
-                st.error("Invalid credentials")
-    else:
-        # Dashboard
-        st.sidebar.title(f"Welcome, {st.session_state.username}")
-        if st.sidebar.button("Logout"):
-            log_audit(st.session_state.username, "LOGOUT", "User logged out")
-            st.session_state.authenticated = False
-            st.rerun()
-        
-        st.title("Dashboard")
-        
-        # Quick Stats
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
-            st.metric("Today's Sales", "$0.00")
-        with col2:
-            st.metric("Orders Pending", "0")
-        with col3:
-            st.metric("Low Stock Items", "0")
+                with st.spinner("Authenticating..."):
+                    try:
+                        profile = login(email, password)
+                        st.success(f"Welcome, {profile['full_name']}")
+                        st.rerun()
+                    except Exception as e:
+                        st.error(f"Login failed: {str(e)}")
+    st.stop()
+
+# ── Authenticated ─────────────────────────────────────────────
+user = current_user()
+role = current_role()
+name = st.session_state.get("full_name", "User")
+
+# Sidebar info
+with st.sidebar:
+    st.markdown(f"""
+<div style="padding:12px 0;border-bottom:1px solid rgba(240,234,216,0.08);margin-bottom:8px">
+  <div style="font-family:Cormorant Garamond,serif;font-size:20px;color:#c8922a;letter-spacing:.06em">Duka</div>
+  <div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#5a5247">Shop Management</div>
+</div>
+<div style="padding:10px 0;border-bottom:1px solid rgba(240,234,216,0.08);margin-bottom:8px">
+  <div style="font-size:12px;color:#f0ead8">{name}</div>
+  <div style="margin-top:4px">{badge(role.upper(), ROLE_COLORS.get(role,'neutral'))}</div>
+</div>""", unsafe_allow_html=True)
+    if st.button("Sign Out", use_container_width=True):
+        logout()
+
+section_header("Dashboard", f"Welcome back, {name}")
+
+sb = get_sb()
+
+# KPI row
+orders = sb.table("sales_orders").select("total_amount,deposit_paid,balance_due,status").execute().data
+inventory = sb.table("catalog").select("item_id").eq("is_active", True).execute().data
+lines = sb.table("order_lines").select("line_cogs").eq("is_voided", False).execute().data
+expenses = sb.table("expenses").select("amount").eq("is_voided", False).execute().data
+
+revenue = sum(o["total_amount"] for o in orders)
+balance = sum(o["balance_due"] for o in orders if o["status"] not in ["Cancelled", "Delivered"])
+cogs = sum(l["line_cogs"] for l in lines)
+total_exp = sum(e["amount"] for e in expenses)
+pending = sum(1 for o in orders if o["status"] == "Pending")
+
+cols = st.columns(5)
+from styles import metric_card
+with cols[0]: st.markdown(metric_card("Revenue", f"{revenue:,.0f}",    "gold"),    unsafe_allow_html=True)
+with cols[1]: st.markdown(metric_card("Gross Profit", f"{revenue-cogs:,.0f}", "success"), unsafe_allow_html=True)
+with cols[2]: st.markdown(metric_card("Outstanding Balance", f"{balance:,.0f}", "danger"), unsafe_allow_html=True)
+with cols[3]: st.markdown(metric_card("Pending Orders", str(pending), "gold"),    unsafe_allow_html=True)
+with cols[4]: st.markdown(metric_card("Catalog Items", str(len(inventory))),      unsafe_allow_html=True)
+
+st.markdown("<hr>", unsafe_allow_html=True)
+
+# Recent orders
+st.markdown('<h3>Recent Orders</h3>', unsafe_allow_html=True)
+recent = sb.table("sales_orders").select("*").order("created_at", desc=True).limit(8).execute().data
+if recent:
+    import pandas as pd
+    df = pd.DataFrame(recent)[["created_at","customer_name","customer_phone","status","total_amount","deposit_paid","balance_due"]]
+    df.columns = ["Date","Customer","Phone","Status","Total","Deposit","Balance"]
+    df["Date"] = df["Date"].apply(fmt_dt)
+    st.dataframe(df, use_container_width=True, hide_index=True)
+
+# ── User Management (admin only) ─────────────────────────────
+if can("manage_users"):
+    st.markdown("<hr>", unsafe_allow_html=True)
+    section_header("User Management", "Admin only")
+
+    profiles = sb.table("profiles").select("user_id,full_name,role,created_at").order("created_at").execute().data
+
+    for p in profiles:
+        col1, col2, col3, col4 = st.columns([3, 2, 2, 1])
+        with col1: st.markdown(f'<span style="color:#f0ead8;font-size:13px">{p["full_name"]}</span>', unsafe_allow_html=True)
+        with col2: st.markdown(badge(p["role"].upper(), ROLE_COLORS.get(p["role"],"neutral")), unsafe_allow_html=True)
+        with col3: st.markdown(f'<span style="font-size:11px;color:#5a5247;font-family:DM Mono,monospace">{fmt_dt(p["created_at"])}</span>', unsafe_allow_html=True)
         with col4:
-            st.metric("Active Users", "1")
-        
-        # User Management Section
-        st.subheader("User Management")
-        conn = get_db_connection()
-        if conn:
-            users = conn.execute("SELECT * FROM users").fetchall() if conn else []
-            if users:
-                st.dataframe(users, use_container_width=True)
-            else:
-                st.info("No users found")
-        
-        st.markdown("---")
-        st.caption("Navigate using the sidebar menu")
+            if p["user_id"] != str(user.id):
+                new_role = st.selectbox("", ["cashier","manager","admin"], key=f"role_{p['user_id']}",
+                    index=["cashier","manager","admin"].index(p["role"]), label_visibility="collapsed")
+                if new_role != p["role"]:
+                    old = dict(p)
+                    sb.table("profiles").update({"role": new_role}).eq("user_id", p["user_id"]).execute()
+                    audit("profiles", p["user_id"], "UPDATE", old_data=old, new_data={"role": new_role}, changed_fields=["role"], reason="Role changed by admin")
+                    st.success(f"Role updated to {new_role}")
+                    st.rerun()
 
-if __name__ == "__main__":
-    main()
+    st.markdown("<hr>", unsafe_allow_html=True)
+    with st.expander("Invite New User"):
+        with st.form("invite_form"):
+            ni_email = st.text_input("Email")
+            ni_name  = st.text_input("Full Name")
+            ni_pass  = st.text_input("Temporary Password", type="password")
+            ni_role  = st.selectbox("Role", ["cashier","manager","admin"])
+            if st.form_submit_button("Create User", type="primary"):
+                try:
+                    res = sb.auth.admin.create_user({
+                        "email": ni_email, "password": ni_pass,
+                        "user_metadata": {"full_name": ni_name},
+                        "email_confirm": True
+                    })
+                    sb.table("profiles").update({"role": ni_role, "full_name": ni_name}).eq("user_id", res.user.id).execute()
+                    audit("profiles", res.user.id, "INSERT", new_data={"email": ni_email, "role": ni_role}, reason="User created by admin")
+                    st.success(f"User {ni_email} created with role {ni_role}")
+                    st.rerun()
+                except Exception as e:
+                    st.error(str(e))

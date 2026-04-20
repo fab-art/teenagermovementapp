@@ -1,44 +1,61 @@
 import streamlit as st
-import json
 from datetime import datetime
-from supabase import create_client
 
-# ── Client ────────────────────────────────────────────────────
-@st.cache_resource
-def get_sb():
-    url = st.secrets["SUPABASE_URL"]
-    key = st.secrets["SUPABASE_KEY"]
-    return create_client(url, key)
+# ── Hardcoded Users Database ──────────────────────────────────
+# Format: username: {password, role, full_name}
+USERS_DB = {
+    "admin": {
+        "password": "admin123",
+        "role": "admin",
+        "full_name": "System Administrator"
+    },
+    "manager": {
+        "password": "manager123",
+        "role": "manager",
+        "full_name": "Store Manager"
+    },
+    "cashier": {
+        "password": "cashier123",
+        "role": "cashier",
+        "full_name": "Front Desk Cashier"
+    }
+}
 
-
-# ── Auth ──────────────────────────────────────────────────────
-def login(email: str, password: str):
-    sb = get_sb()
-    res = sb.auth.sign_in_with_password({"email": email, "password": password})
-    user = res.user
-    session = res.session
-    profile = sb.table("profiles").select("role,full_name").eq("user_id", user.id).single().execute()
-    st.session_state.user = user
-    st.session_state.session = session
-    st.session_state.role = profile.data["role"]
-    st.session_state.full_name = profile.data["full_name"]
-    return profile.data
+# ── Auth Functions ────────────────────────────────────────────
+def login(username: str, password: str):
+    """Authenticate user against hardcoded DB."""
+    if username in USERS_DB:
+        if USERS_DB[username]["password"] == password:
+            user_data = {
+                "username": username,
+                "role": USERS_DB[username]["role"],
+                "full_name": USERS_DB[username]["full_name"]
+            }
+            st.session_state.user = user_data
+            st.session_state.role = user_data["role"]
+            st.session_state.full_name = user_data["full_name"]
+            st.session_state.logged_in = True
+            return user_data
+    return None
 
 def logout():
-    get_sb().auth.sign_out()
-    for k in ["user","session","role","full_name"]:
-        st.session_state.pop(k, None)
+    """Clear session state and rerun."""
+    for key in list(st.session_state.keys()):
+        del st.session_state[key]
     st.rerun()
 
 def current_user():
+    """Get current user data."""
     return st.session_state.get("user")
 
 def current_role():
+    """Get current user role."""
     return st.session_state.get("role", "cashier")
 
-def current_uid():
-    u = current_user()
-    return str(u.id) if u else None
+def current_username():
+    """Get current username."""
+    user = current_user()
+    return user["username"] if user else None
 
 def require_auth():
     """Gate: redirect to login if not authenticated. Returns True if ok."""
@@ -72,26 +89,46 @@ def can(action: str) -> bool:
     return role in perms.get(action, [])
 
 
+# ── Supabase Client (for data only, no auth) ─────────────────
+@st.cache_resource
+def get_sb():
+    """Get Supabase client for data operations."""
+    try:
+        from supabase import create_client
+        url = st.secrets["SUPABASE_URL"]
+        key = st.secrets["SUPABASE_KEY"]
+        return create_client(url, key)
+    except (KeyError, ImportError):
+        return None
+
+
 # ── Audit Log ────────────────────────────────────────────────
 def audit(table: str, record_id: str, action: str, old_data=None, new_data=None, reason: str = None, changed_fields=None):
     sb = get_sb()
-    uid = current_uid()
+    if sb is None:
+        return
+    uid = current_username()
     entry = {
         "table_name": table,
         "record_id": str(record_id),
         "action": action,
-        "old_data": json.dumps(old_data, default=str) if old_data else None,
-        "new_data": json.dumps(new_data, default=str) if new_data else None,
+        "old_data": str(old_data) if old_data else None,
+        "new_data": str(new_data) if new_data else None,
         "changed_fields": changed_fields,
         "reason": reason,
         "performed_by": uid,
     }
-    sb.table("audit_log").insert(entry).execute()
+    try:
+        sb.table("audit_log").insert(entry).execute()
+    except Exception:
+        pass  # Fail silently for audit logs
 
 
 # ── Inventory helpers ─────────────────────────────────────────
 def load_inventory():
     sb = get_sb()
+    if sb is None:
+        return []
     cat = sb.table("catalog").select("item_id,name,type,uom,current_landed_cost,default_sell_price,is_active").eq("is_active", True).order("name").execute().data
     led = sb.table("inventory_ledger").select("item_id,quantity_change").execute().data
     totals = {}
@@ -99,9 +136,11 @@ def load_inventory():
         totals[r["item_id"]] = totals.get(r["item_id"], 0) + r["quantity_change"]
     for c in cat:
         c["stock"] = round(max(totals.get(c["item_id"], 0), 0), 3)
-    return cat
+    return cat or []
 
 def moving_avg_landed_cost(sb, item_id, new_qty, new_lc):
+    if sb is None:
+        return new_lc
     cat = sb.table("catalog").select("current_landed_cost").eq("item_id", item_id).single().execute()
     led = sb.table("inventory_ledger").select("quantity_change").eq("item_id", item_id).execute()
     old_cost = cat.data["current_landed_cost"] if cat.data else 0

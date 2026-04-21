@@ -48,17 +48,27 @@ def audit(table, record_id, action, old_data=None, new_data=None, reason=None, c
     from users import current_user
     
     u = current_user()
-    sb.table("audit_log").insert({
+    payload = {
         "table_name": table,
         "record_id": str(record_id),
         "action": action,
         "old_data": json.dumps(old_data, default=str) if old_data else None,
         "new_data": json.dumps(new_data, default=str) if new_data else None,
-        "changed_fields": changed_fields,
         "reason": reason,
-        "performed_by_username": u.get("username") if u else None,
-        "performed_by_name": u.get("full_name") if u else None,
-    }).execute()
+    }
+    if changed_fields is not None:
+        payload["changed_fields"] = changed_fields
+    if u:
+        if u.get("username"):
+            payload["performed_by_username"] = u.get("username")
+        if u.get("full_name"):
+            payload["performed_by_name"] = u.get("full_name")
+    
+    try:
+        sb.table("audit_log").insert(payload).execute()
+    except Exception as e:
+        # If audit logging fails, log warning but don't block operation
+        st.warning(f"Audit log failed: {e}")
 
 
 def fmt(n):

@@ -14,8 +14,8 @@ def load_inventory():
     """Load inventory with current stock levels from ledger."""
     sb = get_sb()
     cat = sb.table("catalog").select(
-        "item_id,name,type,uom,current_landed_cost,default_sell_price,is_active"
-    ).eq("is_active", True).order("name").execute().data
+        "item_id,name,type,uom,current_landed_cost,default_sell_price"
+    ).order("name").execute().data
     
     led = sb.table("inventory_ledger").select("item_id,quantity_change").execute().data
     

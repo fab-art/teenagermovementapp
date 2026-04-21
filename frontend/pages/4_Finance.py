@@ -15,7 +15,7 @@ sb = get_sb()
 section_title("Finance", "Revenue, expenses & payables")
 
 orders   = sb.table("sales_orders").select("total_amount,status").neq("status","Cancelled").execute().data
-lines    = sb.table("order_lines").select("line_cogs").eq("is_voided",False).execute().data
+lines    = sb.table("order_lines").select("line_cogs").execute().data
 expenses = sb.table("expenses").select("amount").eq("is_voided",False).execute().data
 invoices = sb.table("purchase_invoices").select("landed_cost,suppliers(name)").eq("status","On Credit").eq("is_voided",False).execute().data
 

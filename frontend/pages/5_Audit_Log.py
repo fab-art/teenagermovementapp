@@ -4,25 +4,56 @@ import json
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from styles import inject, section_header, badge
-from utils import get_sb, require_role, fmt_dt, ROLE_COLORS
+from utils import get_sb, require_role, fmt_dt, ROLE_COLORS, current_user, current_role, logout, can
 
-st.set_page_config(page_title="Audit Log — Duka", page_icon="◌", layout="wide")
+st.set_page_config(page_title="Audit Log — Duka", page_icon="◌", layout="wide", menu_items=None)
 inject()
 require_role(["admin", "manager"])
 
+# Persistent Sidebar Navigation (same as Home.py)
+user = current_user()
+role = current_role()
+name = user.get("full_name", "User")
+username = user.get("username", "user")
+
 with st.sidebar:
-    from utils import current_role, logout
-    name = st.session_state.get("full_name", "User")
-    role = current_role()
     st.markdown(f"""
-<div style="padding:12px 0;border-bottom:1px solid rgba(240,234,216,0.08);margin-bottom:8px">
-  <div style="font-family:Cormorant Garamond,serif;font-size:20px;color:#c8922a">Duka</div>
+<div style="padding:16px 0;border-bottom:1px solid rgba(240,234,216,0.1);margin-bottom:16px">
+  <div style="font-family:Cormorant Garamond,serif;font-size:24px;font-weight:600;color:#c8922a;letter-spacing:.08em">Duka</div>
+  <div style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#5a5247;margin-top:4px">Shop Management</div>
 </div>
-<div style="padding:8px 0;margin-bottom:8px">
-  <div style="font-size:12px;color:#f0ead8">{name}</div>
-  <div style="margin-top:4px">{badge(role.upper(), ROLE_COLORS.get(role,'neutral'))}</div>
+<div style="padding:12px;background:rgba(200,146,42,0.08);border-radius:6px;margin-bottom:16px;border:1px solid rgba(200,146,42,0.15)">
+  <div style="font-size:13px;color:#f0ead8;font-weight:500">{name}</div>
+  <div style="margin-top:4px;display:flex;align-items:center;gap:6px">
+    <span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#5a5247">@{username}</span>
+    <span style="width:4px;height:4px;background:#5a5247;border-radius:50%"></span>
+    {badge(role.upper(), ROLE_COLORS.get(role,'neutral'))}
+  </div>
 </div>""", unsafe_allow_html=True)
-    if st.button("Sign Out", use_container_width=True):
+    
+    # Navigation Menu
+    st.markdown('<div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#5a5247;margin:16px 0 8px">Navigation</div>', unsafe_allow_html=True)
+    
+    menu_items = {
+        "🏠 Home": "/",
+        "💳 POS": "/1_POS",
+        "📦 Inventory": "/2_Inventory",
+        "📋 Orders": "/3_Orders",
+    }
+    
+    if can("view_finance"):
+        menu_items["💰 Finance"] = "/4_Finance"
+    
+    if can("view_audit"):
+        menu_items["📜 Audit Log"] = "/5_Audit_Log"
+    
+    for label, path in menu_items.items():
+        if st.button(label, use_container_width=True, key=f"nav_{label}"):
+            st.switch_page(f"pages{path}.py" if path != "/" else "Home.py")
+    
+    st.markdown('<div style="height:1px;background:rgba(240,234,216,0.1);margin:16px 0"></div>', unsafe_allow_html=True)
+    
+    if st.button("🚪 Sign Out", use_container_width=True, type="secondary"):
         logout()
 
 sb = get_sb()

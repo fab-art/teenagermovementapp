@@ -14,7 +14,7 @@ render_sidebar("POS")
 sb = get_sb()
 section_title("Point of Sale", "Create new orders")
 
-catalog = sb.table("catalog").select("item_id,name,uom,default_sell_price,current_landed_cost").eq("is_active", True).order("name").execute().data
+catalog = sb.table("catalog").select("item_id,name,uom,default_sell_price,current_landed_cost").order("name").execute().data
 if "cart" not in st.session_state:
     st.session_state.cart = []
 

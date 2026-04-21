@@ -22,6 +22,14 @@ ROLE_BADGE = {
     "cashier": ("cashier", "Cashier"),
 }
 
+def _visible_nav_items():
+    items = []
+    for label, icon, page, perm in NAV_ITEMS:
+        if perm and not can(perm):
+            continue
+        items.append((label, icon, page))
+    return items
+
 def render_sidebar(active_page: str = ""):
     # Inject sidebar CSS once
     st.markdown("""
@@ -94,13 +102,50 @@ def render_sidebar(active_page: str = ""):
 </div>""", unsafe_allow_html=True)
 
         # ── Navigation ─────────────────────────────────────────
-        for label, icon, page, perm in NAV_ITEMS:
-            if perm and not can(perm):
-                continue
-            st.page_link(page, label=f"{icon}  {label}")
+        if active_page:
+            st.markdown(
+                f"""<div style="padding:0 20px 8px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#534f47">
+Current section · <span style="color:#c49a2c">{active_page}</span>
+</div>""",
+                unsafe_allow_html=True,
+            )
+        for label, icon, page in _visible_nav_items():
+            if label == active_page:
+                st.markdown(
+                    f"""<div style="margin:2px 10px;padding:9px 12px;border-radius:4px;
+background:rgba(196,154,44,0.11);border:1px solid rgba(196,154,44,0.22);
+color:#c49a2c;font-size:12.5px;font-family:Jost,sans-serif;font-weight:500">
+{icon} &nbsp; {label}
+</div>""",
+                    unsafe_allow_html=True,
+                )
+            else:
+                st.page_link(page, label=f"{icon}  {label}")
 
         # ── Sign out ───────────────────────────────────────────
         st.markdown("<div style='margin-top:16px;border-top:1px solid rgba(232,224,204,0.07);padding-top:12px'>", unsafe_allow_html=True)
         if st.button("Sign Out", key="sidebar_signout", use_container_width=True):
             logout()
         st.markdown("</div>", unsafe_allow_html=True)
+
+    # ── Top navigation bar (role-based) ──────────────────────
+    nav_items = _visible_nav_items()
+    if nav_items:
+        st.markdown(
+            """<div style="margin:-8px 0 14px;padding:8px 10px;border:1px solid rgba(232,224,204,0.07);
+border-radius:6px;background:#1a1814"><span style="font-size:9px;letter-spacing:.12em;
+text-transform:uppercase;color:#534f47">Quick Navigation</span></div>""",
+            unsafe_allow_html=True,
+        )
+        cols = st.columns(len(nav_items))
+        for idx, (label, icon, page) in enumerate(nav_items):
+            with cols[idx]:
+                is_active = label == active_page
+                btn_label = f"{icon} {label}"
+                if st.button(
+                    btn_label,
+                    key=f"topnav_{label.lower().replace(' ', '_')}",
+                    use_container_width=True,
+                    disabled=is_active,
+                ):
+                    st.switch_page(page)

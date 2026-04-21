@@ -94,10 +94,27 @@ def render_sidebar(active_page: str = ""):
 </div>""", unsafe_allow_html=True)
 
         # ── Navigation ─────────────────────────────────────────
+        if active_page:
+            st.markdown(
+                f"""<div style="padding:0 20px 8px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#534f47">
+Current section · <span style="color:#c49a2c">{active_page}</span>
+</div>""",
+                unsafe_allow_html=True,
+            )
         for label, icon, page, perm in NAV_ITEMS:
             if perm and not can(perm):
                 continue
-            st.page_link(page, label=f"{icon}  {label}")
+            if label == active_page:
+                st.markdown(
+                    f"""<div style="margin:2px 10px;padding:9px 12px;border-radius:4px;
+background:rgba(196,154,44,0.11);border:1px solid rgba(196,154,44,0.22);
+color:#c49a2c;font-size:12.5px;font-family:Jost,sans-serif;font-weight:500">
+{icon} &nbsp; {label}
+</div>""",
+                    unsafe_allow_html=True,
+                )
+            else:
+                st.page_link(page, label=f"{icon}  {label}")
 
         # ── Sign out ───────────────────────────────────────────
         st.markdown("<div style='margin-top:16px;border-top:1px solid rgba(232,224,204,0.07);padding-top:12px'>", unsafe_allow_html=True)

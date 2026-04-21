@@ -99,7 +99,7 @@ with col_r:
                     cr = sb.table("catalog").select("item_id,current_landed_cost").in_("item_id",ids).execute()
                     cm = {r["item_id"]:r["current_landed_cost"] for r in cr.data}
                     total = sum(l["quantity"]*l["unit_price"] for l in st.session_state.cart)
-                    order = sb.table("sales_orders").insert({"customer_name":cname,"customer_phone":cphone,"total_amount":total,"deposit_paid":deposit,"status":"Pending","notes":notes,"created_by":st.session_state.get("username")}).execute().data[0]
+                    order = sb.table("sales_orders").insert({"customer_name":cname,"customer_phone":cphone,"total_amount":total,"deposit_paid":deposit,"balance_due":max(total-deposit, 0),"status":"Pending","notes":notes,"created_by":st.session_state.get("username")}).execute().data[0]
                     oid = order["order_id"]
                     for line in st.session_state.cart:
                         cogs=(cm.get(line["item_id"],0) or 0)*line["quantity"]

@@ -78,7 +78,7 @@ section_title("Dashboard", f"Welcome back, {name}")
 
 # ── Shared data fetches ───────────────────────────────────────
 orders   = sb.table("sales_orders").select("order_id,total_amount,deposit_paid,balance_due,status,customer_name,created_at").order("created_at", desc=True).limit(200).execute().data
-catalog  = sb.table("catalog").select("item_id,name,uom,stock_on_hand:current_landed_cost,default_sell_price").eq("is_active", True).execute().data if role == "cashier" else []
+catalog  = sb.table("catalog").select("item_id,name,uom,stock_on_hand:current_landed_cost,default_sell_price").execute().data if role == "cashier" else []
 
 # ════════════════════════════════════════════════════════════
 # ADMIN DASHBOARD — full company metrics
@@ -86,7 +86,7 @@ catalog  = sb.table("catalog").select("item_id,name,uom,stock_on_hand:current_la
 if role == "admin":
     lines    = sb.table("order_lines").select("line_cogs").eq("is_voided", False).execute().data
     expenses = sb.table("expenses").select("amount,category").eq("is_voided", False).execute().data
-    inv_data = sb.table("catalog").select("item_id,current_landed_cost").eq("is_active",True).execute().data
+    inv_data = sb.table("catalog").select("item_id,current_landed_cost").execute().data
     led_data = sb.table("inventory_ledger").select("item_id,quantity_change").execute().data
 
     # Calculations

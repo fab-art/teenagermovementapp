@@ -82,8 +82,8 @@ with tab2:
                     new_avg=moving_avg_lc(sb,item_id,qty,lc)
                     sb.table("catalog").update({"current_landed_cost":new_avg}).eq("item_id",item_id).execute()
                     audit("catalog",item_id,"UPDATE",old_data=old,new_data={"current_landed_cost":new_avg},changed_fields=["current_landed_cost"],reason="Landed cost update on inward")
-                led=sb.table("inventory_ledger").insert({"item_id":item_id,"transaction_type":"INWARD","quantity_change":qty,"unit_cost":round(lc,2),"created_by":st.session_state.get("username")}).execute().data[0]
-                inv_d={"item_id":item_id,"quantity":qty,"purchase_price":purchase,"freight_cost":freight,"status":pay,"created_by":st.session_state.get("username")}
+                led=sb.table("inventory_ledger").insert({"item_id":item_id,"transaction_type":"INWARD","quantity_change":qty,"unit_cost":round(lc,2)}).execute().data[0]
+                inv_d={"item_id":item_id,"quantity":qty,"purchase_price":purchase,"freight_cost":freight,"status":pay}
                 if sup_map.get(sup_sel): inv_d["supplier_id"]=sup_map[sup_sel]
                 sb.table("purchase_invoices").insert(inv_d).execute()
                 audit("inventory_ledger",led["ledger_id"],"INSERT",new_data=led,reason="Stock inward")
@@ -106,7 +106,7 @@ with tab3:
                         if not ar2: st.error("Reason required")
                         elif ac==0: st.error("Change cannot be zero")
                         else:
-                            led=sb.table("inventory_ledger").insert({"item_id":ar["item_id"],"transaction_type":"ADJUSTMENT","quantity_change":ac,"notes":f"{at}: {ar2}","created_by":st.session_state.get("username")}).execute().data[0]
+                            led=sb.table("inventory_ledger").insert({"item_id":ar["item_id"],"transaction_type":"ADJUSTMENT","quantity_change":ac,"notes":f"{at}: {ar2}"}).execute().data[0]
                             audit("inventory_ledger",led["ledger_id"],"ADJUST",new_data={"item":ai,"change":ac,"type":at},reason=ar2)
                             st.success(f"Adjustment applied: {'+' if ac>0 else ''}{ac} {ar['uom']}"); st.rerun()
         with sub2:

@@ -130,7 +130,6 @@ if role == "admin":
         st.markdown('<h3>Recent Orders</h3>', unsafe_allow_html=True)
         recent = orders[:12]
         if recent:
-            from styles import STATUS_COLORS if False else None
             SC = {"Pending":"#c49a2c","Ready":"#3a6898","Delivered":"#4a8854","Cancelled":"#b84030"}
             rows = []
             for o in recent:

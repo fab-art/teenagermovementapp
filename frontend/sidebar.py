@@ -110,6 +110,9 @@ Current section · <span style="color:#c49a2c">{active_page}</span>
                 unsafe_allow_html=True,
             )
         for label, icon, page in _visible_nav_items():
+        for label, icon, page, perm in NAV_ITEMS:
+            if perm and not can(perm):
+                continue
             if label == active_page:
                 st.markdown(
                     f"""<div style="margin:2px 10px;padding:9px 12px;border-radius:4px;

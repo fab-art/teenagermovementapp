@@ -70,7 +70,8 @@ else:
                                     sb.table("inventory_ledger").insert({"item_id":vl["item_id"],"transaction_type":"VOID_SALE","quantity_change":vl["quantity"],"unit_cost":vl["line_cogs"]/vl["quantity"] if vl["quantity"] else 0,"reference_id":order["order_id"],"notes":f"Void: {vr}","created_by":st.session_state.get("username")}).execute()
                                     remaining=sb.table("order_lines").select("quantity,unit_price").eq("order_id",order["order_id"]).eq("is_voided",False).execute().data
                                     new_total=sum(l["quantity"]*l["unit_price"] for l in remaining)
-                                    sb.table("sales_orders").update({"total_amount":new_total}).eq("order_id",order["order_id"]).execute()
+                                    new_balance=max(new_total - (order.get("deposit_paid") or 0), 0)
+                                    sb.table("sales_orders").update({"total_amount":new_total,"balance_due":new_balance}).eq("order_id",order["order_id"]).execute()
                                     audit("order_lines",vl["line_id"],"VOID",old_data=old,reason=vr)
                                     st.success("Line voided."); st.rerun()
 
@@ -89,7 +90,10 @@ else:
                             else:
                                 changes={}; cf=[]
                                 if ns!=status: changes["status"]=ns; cf.append("status")
-                                if nd!=order["deposit_paid"]: changes["deposit_paid"]=nd; cf.append("deposit_paid")
+                                if nd!=order["deposit_paid"]:
+                                    changes["deposit_paid"]=nd
+                                    changes["balance_due"]=max((order.get("total_amount") or 0) - nd, 0)
+                                    cf.extend(["deposit_paid","balance_due"])
                                 if nn!=(order.get("notes") or ""): changes["notes"]=nn; cf.append("notes")
                                 if changes:
                                     sb.table("sales_orders").update(changes).eq("order_id",order["order_id"]).execute()

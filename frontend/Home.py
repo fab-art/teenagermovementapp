@@ -84,8 +84,8 @@ catalog  = sb.table("catalog").select("item_id,name,uom,stock_on_hand:current_la
 # ADMIN DASHBOARD — full company metrics
 # ════════════════════════════════════════════════════════════
 if role == "admin":
-    lines    = sb.table("order_lines").select("line_cogs").eq("is_voided", False).execute().data
-    expenses = sb.table("expenses").select("amount,category").eq("is_voided", False).execute().data
+    lines    = sb.table("order_lines").select("line_cogs").execute().data
+    expenses = sb.table("expenses").select("amount,category").execute().data
     inv_data = sb.table("catalog").select("item_id,current_landed_cost").execute().data
     led_data = sb.table("inventory_ledger").select("item_id,quantity_change").execute().data
 
@@ -182,7 +182,7 @@ if role == "admin":
 # MANAGER DASHBOARD — sales + expenses, no profit
 # ════════════════════════════════════════════════════════════
 elif role == "manager":
-    expenses = sb.table("expenses").select("amount,category,description,expense_date").eq("is_voided", False).order("expense_date", desc=True).limit(50).execute().data
+    expenses = sb.table("expenses").select("amount,category,description,expense_date").order("expense_date", desc=True).limit(50).execute().data
 
     revenue   = sum(o["total_amount"] for o in orders if o["status"] != "Cancelled")
     total_exp = sum(e["amount"] for e in expenses)

@@ -22,6 +22,14 @@ ROLE_BADGE = {
     "cashier": ("cashier", "Cashier"),
 }
 
+def _visible_nav_items():
+    items = []
+    for label, icon, page, perm in NAV_ITEMS:
+        if perm and not can(perm):
+            continue
+        items.append((label, icon, page))
+    return items
+
 def render_sidebar(active_page: str = ""):
     # Inject sidebar CSS once
     st.markdown("""
@@ -101,6 +109,7 @@ Current section · <span style="color:#c49a2c">{active_page}</span>
 </div>""",
                 unsafe_allow_html=True,
             )
+        for label, icon, page in _visible_nav_items():
         for label, icon, page, perm in NAV_ITEMS:
             if perm and not can(perm):
                 continue
@@ -121,3 +130,25 @@ color:#c49a2c;font-size:12.5px;font-family:Jost,sans-serif;font-weight:500">
         if st.button("Sign Out", key="sidebar_signout", use_container_width=True):
             logout()
         st.markdown("</div>", unsafe_allow_html=True)
+
+    # ── Top navigation bar (role-based) ──────────────────────
+    nav_items = _visible_nav_items()
+    if nav_items:
+        st.markdown(
+            """<div style="margin:-8px 0 14px;padding:8px 10px;border:1px solid rgba(232,224,204,0.07);
+border-radius:6px;background:#1a1814"><span style="font-size:9px;letter-spacing:.12em;
+text-transform:uppercase;color:#534f47">Quick Navigation</span></div>""",
+            unsafe_allow_html=True,
+        )
+        cols = st.columns(len(nav_items))
+        for idx, (label, icon, page) in enumerate(nav_items):
+            with cols[idx]:
+                is_active = label == active_page
+                btn_label = f"{icon} {label}"
+                if st.button(
+                    btn_label,
+                    key=f"topnav_{label.lower().replace(' ', '_')}",
+                    use_container_width=True,
+                    disabled=is_active,
+                ):
+                    st.switch_page(page)

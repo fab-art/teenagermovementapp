@@ -16,6 +16,7 @@ full_name = "Cashier One"
 import hashlib
 import streamlit as st
 
+
 # ── Default profiles (overridden by secrets.toml if present) ──
 DEFAULT_USERS = {
     "admin": {
@@ -35,11 +36,14 @@ DEFAULT_USERS = {
     },
 }
 
+
 def _hash(pw: str) -> str:
+    """Hash password using SHA256."""
     return hashlib.sha256(pw.encode()).hexdigest()
 
+
 def get_users() -> dict:
-    """Merge default users with any overrides in secrets.toml [users.*]"""
+    """Merge default users with any overrides in secrets.toml [users.*]."""
     users = {k: dict(v) for k, v in DEFAULT_USERS.items()}
     try:
         secret_users = st.secrets.get("users", {})
@@ -53,6 +57,7 @@ def get_users() -> dict:
         pass
     return users
 
+
 def authenticate(username: str, password: str):
     """Returns user dict if valid, None otherwise."""
     users = get_users()
@@ -61,53 +66,66 @@ def authenticate(username: str, password: str):
         return {"username": username.lower().strip(), **u}
     return None
 
+
 # ── Permissions map ───────────────────────────────────────────
 PERMISSIONS = {
     # POS
-    "place_orders":       ["admin", "manager", "cashier"],
+    "place_orders": ["admin", "manager", "cashier"],
     # Inventory
-    "view_inventory":     ["admin", "manager"],
-    "receive_stock":      ["admin", "manager"],
-    "adjust_inventory":   ["admin"],
-    "edit_prices":        ["admin", "manager"],
-    "manage_catalog":     ["admin"],
+    "view_inventory": ["admin", "manager"],
+    "receive_stock": ["admin", "manager"],
+    "adjust_inventory": ["admin"],
+    "edit_prices": ["admin", "manager"],
+    "manage_catalog": ["admin"],
     # Orders
-    "view_orders":        ["admin", "manager", "cashier"],
-    "edit_orders":        ["admin", "manager"],
-    "void_lines":         ["admin", "manager"],
+    "view_orders": ["admin", "manager", "cashier"],
+    "edit_orders": ["admin", "manager"],
+    "void_lines": ["admin", "manager"],
     # Finance
-    "view_finance":       ["admin", "manager"],
-    "view_profit":        ["admin"],           # manager sees sales/expenses, not profit
-    "log_expenses":       ["admin", "manager"],
-    "void_expenses":      ["admin"],
-    "manage_payables":    ["admin", "manager"],
+    "view_finance": ["admin", "manager"],
+    "view_profit": ["admin"],  # manager sees sales/expenses, not profit
+    "log_expenses": ["admin", "manager"],
+    "void_expenses": ["admin"],
+    "manage_payables": ["admin", "manager"],
     # Users / Audit
-    "view_audit":         ["admin", "manager"],
-    "manage_users":       ["admin"],
+    "view_audit": ["admin", "manager"],
+    "manage_users": ["admin"],
 }
 
+
 def can(action: str) -> bool:
+    """Check if current user role has permission for action."""
     role = st.session_state.get("role", "")
     return role in PERMISSIONS.get(action, [])
 
+
 def current_role() -> str:
+    """Get current user's role."""
     return st.session_state.get("role", "")
 
+
 def current_user() -> dict:
+    """Get current user data."""
     return st.session_state.get("user")
 
+
 def require_auth():
+    """Redirect to login if not authenticated."""
     if not current_user():
         st.switch_page("Home.py")
         st.stop()
 
+
 def require_permission(action: str):
+    """Require authentication and specific permission."""
     require_auth()
     if not can(action):
         st.error(f"Access restricted. You don't have permission for this section.")
         st.stop()
 
+
 def logout():
+    """Clear user session and redirect to login."""
     for k in ["user", "role", "full_name", "username"]:
         st.session_state.pop(k, None)
     st.switch_page("Home.py")

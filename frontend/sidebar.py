@@ -122,6 +122,18 @@ Current section · <span style="color:#c49a2c">{active_page}</span>
             )
 
         for label, icon, page in _visible_nav_items():
+        # ── Navigation ─────────────────────────────────────────
+        if active_page:
+            st.markdown(
+                f"""<div style="padding:0 20px 8px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#534f47">
+Current section · <span style="color:#c49a2c">{active_page}</span>
+</div>""",
+                unsafe_allow_html=True,
+            )
+        for label, icon, page in _visible_nav_items():
+        for label, icon, page, perm in NAV_ITEMS:
+            if perm and not can(perm):
+                continue
             if label == active_page:
                 st.markdown(
                     f"""<div style="margin:2px 10px;padding:9px 12px;border-radius:4px;
@@ -142,6 +154,7 @@ color:#c49a2c;font-size:12.5px;font-family:Jost,sans-serif;font-weight:500">
             logout()
         st.markdown("</div>", unsafe_allow_html=True)
 
+    # ── Top navigation bar (role-based) ──────────────────────
     nav_items = _visible_nav_items()
     if nav_items:
         st.markdown(
@@ -156,6 +169,9 @@ text-transform:uppercase;color:#534f47">Quick Navigation</span></div>""",
                 is_active = label == active_page
                 if st.button(
                     f"{icon} {label}",
+                btn_label = f"{icon} {label}"
+                if st.button(
+                    btn_label,
                     key=f"topnav_{label.lower().replace(' ', '_')}",
                     use_container_width=True,
                     disabled=is_active,

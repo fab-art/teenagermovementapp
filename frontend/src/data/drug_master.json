@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "generic_name": "Paracetamol",
+    "atc_code": "N02BE01",
+    "therapeutic_class": "Analgesics",
+    "description": "Analgesic and antipyretic.",
+    "indications": "Pain and fever.",
+    "rhia_covered": true
+  },
+  {
+    "id": "2",
+    "generic_name": "Amoxicillin",
+    "atc_code": "J01CA04",
+    "therapeutic_class": "Antibacterials",
+    "description": "Beta-lactam antibiotic.",
+    "indications": "Bacterial infections.",
+    "rhia_covered": true
+  },
+  {
+    "id": "3",
+    "generic_name": "Amlodipine",
+    "atc_code": "C08CA01",
+    "therapeutic_class": "Antihypertensives",
+    "description": "Calcium channel blocker.",
+    "indications": "Hypertension and angina.",
+    "rhia_covered": true
+  }
+]

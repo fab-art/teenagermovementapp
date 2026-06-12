@@ -1,0 +1,548 @@
+[
+  {
+    "atc_code": "A01",
+    "title": ".STOMATOLOGICAL PREPARATIONS",
+    "pathophysiology": "Dental caries, gingivitis, and oral candidiasis are primary oral pathologies. Caries develops when acidogenic bacteria (Streptococcus mutans) metabolize dietary carbohydrates to lactic acid, demineralizing tooth enamel. Gingivitis involves bacterial biofilm formation triggering inflammatory cascade (IL-1, TNF-\u03b1). Oral candidiasis occurs when Candida albicans overgrowth disrupts normal oral flora, typically in immunocompromised states or antibiotic use.",
+    "pharmacology": "Fluoride strengthens enamel via fluorapatite formation, increasing acid resistance. Antimicrobials (chlorhexidine, hexetidine) disrupt bacterial cell membranes. Antifungals (clotrimazole, miconazole) inhibit fungal ergosterol synthesis. Anti-inflammatory agents reduce gingival edema and bleeding.",
+    "dispensing_guidance": "Fluoride products: counsel on spitting out after use (toxicity risk in children <6 yrs). Antifungals: full course needed (7-14 days) even if symptoms resolve. Chlorhexidine: causes staining; avoid in nursing mothers (absorption into breast milk). Patient education on plaque removal essential for compliance."
+  },
+  {
+    "atc_code": "A02",
+    "title": "DRUGS FOR ACID RELATED DISORDERS",
+    "pathophysiology": "GERD, peptic ulcers, and Zollinger-Ellison syndrome result from excessive gastric acid. Normal gastric pH 1.5-2 protects against pathogens but damages mucosa if protective barriers fail. H. pylori infection disrupts mucin layer. Acid causes protein denaturation, epithelial necrosis, and bleeding. NSAIDs inhibit cytoprotective prostaglandins, increasing ulcer risk.",
+    "pharmacology": "Antacids (Al/Mg hydroxides): neutralize acid via buffering, onset 5 min, duration 30-60 min. H2-blockers (cimetidine, famotidine): block histamine-H2 receptors on parietal cells, reducing acid 60-70%. PPIs (omeprazole, pantoprazole): irreversibly inhibit H+/K+-ATPase, reducing acid 90%+, onset 3-5 days. Mucoprotective agents (sucralfate): polymerize in acidic pH to coat ulcer base.",
+    "dispensing_guidance": "Antacids: take 1-3 hours after meals; separate from other drugs by 2 hrs (absorption interference). H2-blockers: optimal at bedtime or before largest meal. PPIs: take 30-60 min before food, swallow whole (enteric coating); counsel 4-8 week healing period. Avoid NSAIDs during treatment. Monitor long-term PPI use for B12/magnesium depletion."
+  },
+  {
+    "atc_code": "A03A",
+    "title": "DRUGS FOR FUNCTIONAL BOWEL  DISORDERS",
+    "pathophysiology": "IBS, colitis, and GI spasm involve smooth muscle hypercontractility. Acetylcholine released from parasympathetic neurons binds muscarinic receptors on smooth muscle, triggering Ca2+ influx and contraction. Dysregulation causes cramping, diarrhea, and abdominal pain.",
+    "pharmacology": "Anticholinergics (scopolamine, dicyclomine): block muscarinic-M3 receptors on smooth muscle, preventing acetylcholine-induced contraction. Onset 30-60 min. Antispasmodics (mebeverine, alverine): direct smooth muscle relaxation via calcium channel blockade.",
+    "dispensing_guidance": "Anticholinergics: counsel on dry mouth, urinary retention, blurred vision; avoid in glaucoma/BPH. Take 30-60 min before meals. Contraindicated in myasthenia gravis, tachycardia. Mebeverine: effective only in IBS (not organic disease); full trial 2-3 weeks needed."
+  },
+  {
+    "atc_code": "A03F",
+    "title": "PROPULSIVES",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "A04A",
+    "title": "ANTIEMETICS AND ANTINAUSEANTS",
+    "pathophysiology": "Nausea/vomiting triggered via chemoreceptor trigger zone (dopamine, serotonin, histamine, NK1 receptors), vestibular system (histamine), or vagal afferents (chemotherapy, gastroenteritis). Vomiting center in medulla integrates signals. Uncontrolled emesis causes electrolyte loss, dehydration, aspiration risk.",
+    "pharmacology": "Antihistamines (promethazine, cinnarizine): block H1 receptors in vomiting center; anticholinergic properties; cross BBB. 5-HT3 antagonists (ondansetron, granisetron): block serotonin receptors in chemoreceptor trigger zone; highly effective for chemotherapy/post-op nausea. Metoclopramide: D2 antagonist + 5-HT4 agonist; prokinetic effect via acetylcholine sensitization. NK1 antagonists: block substance P.",
+    "dispensing_guidance": "Metoclopramide: 30 min before meals; risk of tardive dyskinesia with prolonged use (>3 months). Ondansetron: given before chemotherapy/surgery; IV/oral forms. Anticholinergics: avoid in elderly (confusion, retention). Counsel on drowsiness/dizziness with antihistamines."
+  },
+  {
+    "atc_code": "A05",
+    "title": "BILE AND LIVER THERAPY",
+    "pathophysiology": "Cholestasis (intrahepatic/extrahepatic) leads to bile acid accumulation, causing pruritus, malabsorption, and hepatocyte injury. Hyperlipidemia (familial or acquired) increases atherosclerosis risk via LDL oxidation and foam cell formation. Gallstones form from cholesterol supersaturation.",
+    "pharmacology": "Bile acids (ursodeoxycholic acid): reduce cholesterol saturation in bile, promote cholesterol dissolution in gallstones; also reduce intestinal cholesterol absorption. Statins: inhibit HMG-CoA reductase (rate-limiting step in cholesterol synthesis); reduce LDL 30-50%, raise HDL. Fibrates: activate PPAR-\u03b1, increase lipoprotein lipase, lower triglycerides 40-50%. Ezetimibe: blocks NPC1L1 cholesterol transporter in intestine.",
+    "dispensing_guidance": "Ursodeoxycholic acid: 2-3 years for stone dissolution; monitor with ultrasound. Statins: take at bedtime (max HMG-CoA activity at night); monitor LFTs + creatine kinase (myopathy risk). Fibrates + statins = myopathy risk (monitor). Ezetimibe: can combine with statins; separate dosing by 2 hours from bile acid sequestrants."
+  },
+  {
+    "atc_code": "A06",
+    "title": "DRUGS FOR CONSTIPATION",
+    "pathophysiology": "Constipation results from slow colonic transit, inadequate fluid intake, or weak defecation reflexes. Severe constipation causes fecal impaction, bowel obstruction, or megacolon. Long-term straining increases hemorrhoid/diverticular disease risk.",
+    "pharmacology": "Bulk laxatives (psyllium, methylcellulose): absorb water, increase stool volume and trigger reflex. Onset 12-72 hrs. Osmotic laxatives (lactulose, polyethylene glycol): retain water in lumen via osmosis; lactulose metabolized to SCFA, acidifying colon (inhibits ammonia reabsorption\u2014useful in hepatic encephalopathy). Stimulant laxatives (bisacodyl, senna): activate myenteric plexus via altered electrolyte transport; onset 6-12 hrs. Stool softeners (docusate): reduce surface tension, improve water penetration.",
+    "dispensing_guidance": "Bulk laxatives: require 8-10 cups water daily; ineffective if dehydrated. Lactulose: titrate to 2-3 soft stools/day; can cause bloating/flatulence (fermentation). Bisacodyl: avoid >1 week (mucosal damage risk). PEG: mix powder with 4-8 oz liquid; used pre-operatively. Docusate alone ineffective; combine with other agents."
+  },
+  {
+    "atc_code": "A09",
+    "title": "DIGESTIVES INCLUDING ENZYMES",
+    "pathophysiology": "Pancreatic insufficiency (CF, chronic pancreatitis, post-gastrectomy): inadequate lipase, amylase, protease \u2192 steatorrhea, malabsorption, weight loss. Enzyme deficiency causes nutrient loss, fat-soluble vitamin deficiency.",
+    "pharmacology": "Pancreatic enzyme supplements (pancreatin, pancrelipase): contain lipase, amylase, protease extracted from porcine pancreas. Replace deficient endogenous enzymes; enteric-coated formulations survive stomach acid.",
+    "dispensing_guidance": "Dose titrated to clinical response (stools/steatorrhea). Take with meals. Enteric-coated forms MUST NOT be crushed (acid inactivation). Monitor for efficacy (weight gain, reduction in steatorrhea). Fish-oil supplements may help absorption."
+  },
+  {
+    "atc_code": "A10",
+    "title": "DRUGS USED IN DIABETES",
+    "pathophysiology": "Type 2 DM: pancreatic \u03b2-cell dysfunction + insulin resistance. Hyperglycemia causes non-enzymatic glycation of proteins \u2192 microvascular (retinopathy, nephropathy, neuropathy) and macrovascular (MI, stroke) complications. Osmotic hyperglycemia causes polyuria/polydipsia. Ketoacidosis in Type 1 DM when insulin absent.",
+    "pharmacology": "Insulins: exogenous insulin replaces deficient endogenous; rapid (lispro, aspart), NPH (intermediate), basal (glargine, detemir). Mechanism: glucose uptake via GLUT4 translocators; glycogen/protein synthesis activation. Metformin: \u2193 hepatic gluconeogenesis via AMP activation; \u2191 insulin sensitivity. Sulfonylureas (glyburide, glipizide): K-ATP channel closure on \u03b2-cells \u2192 insulin release. Dipeptidyl peptidase-4 inhibitors (sitagliptin): \u2193 GLP-1 breakdown \u2192 \u2191 incretin effect. SGLT2 inhibitors (empagliflozin): block renal glucose reabsorption \u2192 increased urinary glucose excretion. GLP-1 agonists: as above (A08).",
+    "dispensing_guidance": "Insulin: teach injection technique, site rotation (prevent lipohypertrophy), storage (refrigerate; room temp max 28 days), hypoglycemia recognition (tremor, sweating, confusion\u2014treat with 15g fast carbs). Metformin: take with meals (GI upset); monitor renal function (eGFR <30 = CI); risk of lactic acidosis (rare). Sulfonylureas: hypoglycemia risk; counsel on missed meals. SGLT2i: monitor for DKA (rare), yeast infections, UTIs. Dose insulin based on pre/post-meal glucose log."
+  },
+  {
+    "atc_code": "A11",
+    "title": "VITAMINS",
+    "pathophysiology": "Micronutrient deficiencies cause specific pathology: iron \u2192 anemia; B12/folate \u2192 megaloblastic anemia + neuropathy; vitamin D \u2192 osteomalacia, rickets; vitamin C \u2192 scurvy; vitamin A \u2192 blindness; iodine \u2192 goiter, cretinism.",
+    "pharmacology": "Iron: divalent form (Fe2+) absorbed in duodenum via DMT1 transporter; heme iron (meat) better absorbed than non-heme (plants). Vitamin B12: cobalamin cofactor for DNA synthesis; intrinsic factor required for absorption. Folate: methyl-tetrahydrofolate cofactor for 1-C transfer. Vitamin D: converts to calcitriol (active form) in kidneys \u2192 intestinal Ca absorption. Calcium: structural mineral; neuromuscular signaling.",
+    "dispensing_guidance": "Iron: take on empty stomach (enhanced absorption) or with vitamin C; counsel on black stools, constipation, GI upset. Separate iron from PPIs by 2+ hours (reduced absorption). IM B12 if pernicious anemia or absorption defect. Folate: essential in pregnancy (neural tube defect prevention). Vitamin D: higher doses needed in malabsorption (post-gastrectomy). Counsel on over-supplementation risks (hypervitaminosis A toxicity, hypercalcemia)."
+  },
+  {
+    "atc_code": "A12",
+    "title": "MINERALS  SUPPLEMENTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "A13",
+    "title": "TONICS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "A15",
+    "title": "APPETITE STIMULANTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "B01",
+    "title": "ANTITHROMBOTICS AGENTS",
+    "pathophysiology": "Thrombosis forms via Virchow's triad: vessel damage (atherosclerosis, surgery), stasis (AF, immobility), and hypercoagulability (cancer, thrombophilia). Platelet aggregation \u2192 fibrin mesh formation \u2192 vessel occlusion. Arterial thrombosis (MI, stroke) vs. venous thrombosis (DVT, PE).",
+    "pharmacology": "Antiplatelet drugs: Aspirin \u2192 irreversible COX inhibition \u2192 \u2193 TXA2 (platelet aggregation). P2Y12 inhibitors (clopidogrel, ticagrelor) \u2192 block ADP-induced platelet activation. GPIIb/IIIa inhibitors (abciximab) \u2192 block fibrinogen bridge. Anticoagulants: Unfractionated heparin (UFH) \u2192 potentiates antithrombin III \u2192 Factors IIa, Xa inhibition (rapid; IV/SC). Low-molecular-weight heparins (LMWH, enoxaparin) \u2192 selective Xa inhibition; SC, longer half-life. Warfarin \u2192 vitamin K antagonist \u2192 \u2193 Factors II, VII, IX, X synthesis (slow; requires INR monitoring). DOACs (apixaban, rivaroxaban, dabigatran) \u2192 direct Xa/IIa inhibition; oral; fixed dosing; no monitoring.",
+    "dispensing_guidance": "Aspirin: GI upset (take with food); bleeding risk (hold 5-7 days pre-op). Clopidogrel: irreversible effect (\u22655 days before surgery). UFH: monitor aPTT (therapeutic 1.5-2.5x baseline); risk of HIT (thrombocytopenia + thrombosis). LMWH: fixed dosing based on weight; monitor anti-Xa if renal impairment (CrCl <30). Warfarin: counsels INR checks (target 2-3 usually), dietary vitamin K consistency, many drug interactions. DOACs: contraindicated in mechanical prosthetic valves; monitor renal function."
+  },
+  {
+    "atc_code": "B02",
+    "title": "ANTIHEMORHAGIC DRUGS",
+    "pathophysiology": "Bleeding disorders result from coagulation factor deficiency (hemophilia), thrombocytopenia, or platelet dysfunction. Excessive bleeding prevents clot formation; inadequate hemostasis \u2192 hemorrhage, anemia.",
+    "pharmacology": "Coagulation factor replacements (Factor VIII for hemophilia A, Factor IX for hemophilia B): exogenous factors restore coagulation cascade. Vitamin K (phytonadione): cofactor for carboxylation of Factors II, VII, IX, X; reverses warfarin effect. Fresh frozen plasma (FFP): contains all factors. Tranexamic acid: plasmin inhibitor \u2192 reduced fibrinolysis \u2192 \u2193 bleeding.",
+    "dispensing_guidance": "Factor concentrates: slow infusion (anaphylaxis risk); monitor for inhibitor development (frequent dosing). Vitamin K: IM preferred (faster than PO; IV risks anaphylaxis). FFP: ABO-compatible; use in emergencies only (volume overload risk). Tranexamic acid: effective for heavy menstrual bleeding, post-surgical bleeding; contraindicated in thromboembolic disease."
+  },
+  {
+    "atc_code": "B03",
+    "title": "ANTIANEMIC DRUGS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "B05",
+    "title": "BLOOD SUBSTITUTES AND PERFUSION SOLUTIONS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "C01",
+    "title": "CARDIAC THERAPY",
+    "pathophysiology": "Heart failure: decreased cardiac contractility (\u2193 CO) triggers compensatory mechanisms (SNS, RAAS, fluid retention) that worsen congestion. Systolic HF: weak contraction. Diastolic HF: stiff ventricle \u2192 impaired filling.",
+    "pharmacology": "Cardiac glycosides (digoxin): inhibit Na+/K+-ATPase \u2192 \u2191 intracellular Na+ \u2192 reduced Na+/Ca2+ exchanger activity \u2192 \u2191 intracellular Ca2+ \u2192 enhanced contraction. Also vagomimetic (\u2193 conduction). Inotropes (dobutamine, milrinone): \u03b21 agonism (dobutamine) or PDE3 inhibition (milrinone) \u2192 \u2191 cAMP \u2192 \u2191 contractility + vasodilation.",
+    "dispensing_guidance": "Digoxin: narrow therapeutic window (0.5-2 ng/mL); toxicity \u2192 arrhythmias, GI upset, visual disturbances. Monitor renal function (accumulates if CrCl <30). Many drug interactions (amiodarone, verapamil increase levels). Baseline EKG needed. Inotropes: IV only; hospital use; monitor BP, HR, for ischemia."
+  },
+  {
+    "atc_code": "C02",
+    "title": "ANTIHYPERTENSIVE DRUGS",
+    "pathophysiology": "Hypertension (>140/90 mmHg) causes vessel remodeling via increased wall stress \u2192 smooth muscle hypertrophy \u2192 reduced lumen. Endothelial dysfunction \u2192 reduced NO \u2192 vasoconstriction. Chronic HTN causes LVH, stroke, MI, renal disease.",
+    "pharmacology": "ACE inhibitors (enalapril, lisinopril): block ACE \u2192 \u2193 angiotensin II (potent vasoconstrictor) + \u2191 bradykinin. ARBs (losartan, valsartan): AT1 receptor antagonism \u2192 similar effect without bradykinin buildup. Beta-blockers (metoprolol, atenolol): \u03b21 antagonism \u2192 \u2193 HR, contractility, renin release. Calcium channel blockers (amlodipine, diltiazem): \u2193 vascular smooth muscle Ca influx \u2192 vasodilation. Thiazide diuretics (HCTZ, chlorthalidone): \u2193 blood volume + vasodilation; hypokalemia/hyperglycemia risk. Alpha-blockers (doxazosin): \u03b11 antagonism \u2192 vasodilation.",
+    "dispensing_guidance": "ACEi: counsel on dry cough (bradykinin; 10-20% incidence). Monitor K+ (hyperkalemia risk). ARBs: no cough; safer in pregnancy than ACEi (teratogenic). Beta-blockers: taper gradually (rebound HTN/MI if stopped abruptly); avoid in asthma/COPD. CCBs: grapefruit interaction (\u2191 levels); ankle edema common. Thiazides: monitor glucose, lipids, K+, uric acid. Start low dose; combine agents for synergy."
+  },
+  {
+    "atc_code": "C03",
+    "title": "DIURETIC DRUGS",
+    "pathophysiology": "Edema (pulmonary, peripheral) or fluid overload in HF, renal disease, cirrhosis results from sodium retention + water follows osmotically.",
+    "pharmacology": "Loop diuretics (furosemide): inhibit Na-K-2Cl cotransporter in loop of Henle \u2192 \u2191 Na excretion (potent; onset 1 hr); high K+ wasting. Thiazides (HCTZ): distal tubule Na-Cl inhibition (moderate potency; 6-12 hr onset). K-sparing diuretics (spironolactone, amiloride): aldosterone antagonism or K channel blockade \u2192 minimal K wasting. Osmotic diuretics (mannitol): osmotic effect \u2192 water excretion (used for cerebral edema, acute kidney injury prevention).",
+    "dispensing_guidance": "Loop diuretics: check daily weights (goal 1-2 lbs/day loss); K+ monitoring essential. Doses escalate with fluid retention. Thiazides: monitor for electrolyte derangements (hyponatremia, hypokalemia). K-sparing: contraindicated in renal impairment (hyperkalemia risk); monitor K+ closely. Osmotic: IV administration; risk of hyperkalemia, dehydration if overused."
+  },
+  {
+    "atc_code": "C04",
+    "title": "PERIPHERAL VASODILATORS",
+    "pathophysiology": "Peripheral arterial disease: atherosclerotic occlusion \u2192 reduced blood flow \u2192 tissue ischemia, claudication (leg pain with exercise).",
+    "pharmacology": "Phosphodiesterase inhibitors (pentoxifylline): \u2193 PDE \u2192 \u2191 cAMP \u2192 improved RBC deformability + reduced platelet aggregation + vasodilation. Prostaglandins (misoprostol, iloprost): vasodilation + antiplatelet effect. Nitrates (isosorbide dinitrate): convert to NO \u2192 vasodilation; mechanism: SNP \u2192 guanylate cyclase activation \u2192 \u2191 cGMP.",
+    "dispensing_guidance": "Pentoxifylline: modest efficacy; requires 8-12 week trial. Nitrates: tolerance develops (24 hr dosing with 12 hr nitrate-free period); headache common (usually subsides). Counsel on regular exercise (most important)."
+  },
+  {
+    "atc_code": "C05",
+    "title": "VASOPROTECTIVE DRUGS",
+    "pathophysiology": "Venous insufficiency: valve incompetence \u2192 retrograde flow \u2192 venous hypertension \u2192 vein dilation, varicosities. Stasis \u2192 thrombosis risk.",
+    "pharmacology": "Flavonoids (diosmin, hesperidin): improve venous tone + reduce capillary permeability \u2192 reduced edema, pain. Venotonics (aescin): capillary stabilization. These agents are weak; primary treatment is compression therapy.",
+    "dispensing_guidance": "Compression therapy 1st-line (better efficacy than drugs). Flavonoids: adjunctive; require 4-8 weeks trial. Surgery/ablation if complications (ulcers, thrombosis)."
+  },
+  {
+    "atc_code": "C07",
+    "title": "BETA BLOCKING AGENTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "C08",
+    "title": "CALCIUM CHANNEL BLOCKERS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "C09",
+    "title": "AGENTS ACTING ON THE RENIN-ANGIOTENSIN SYSTEM",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "C10",
+    "title": "LIPID MODIFYING AGENTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "D01",
+    "title": "ANTIFUNGAL FOR DERMATOLOGICAL USE",
+    "pathophysiology": "Fungal infections (tinea, candidiasis) result from dermatophyte or yeast colonization. Warm, moist environments (groins, feet) favor growth. Immunosuppression (HIV, diabetes) enables systemic infection.",
+    "pharmacology": "Azoles (miconazole, clotrimazole, ketoconazole): inhibit lanosterol 14\u03b1-demethylase \u2192 \u2193 ergosterol synthesis \u2192 fungal cell death. Topical = fungistatic; systemic = fungicidal. Polyenes (amphotericin B, nystatin): bind ergosterol \u2192 pore formation \u2192 cell lysis (fungicidal). Allylamines (terbinafine): inhibit squalene epoxidase \u2192 \u2193 ergosterol precursors.",
+    "dispensing_guidance": "Topical azoles: apply BID-TID x 2-4 weeks (depend on extent); continue 1-2 weeks after lesions disappear (prevent relapse). Nystatin: apply QID; risk of contact dermatitis. Terbinafine: PO for nail infections (12 weeks); monitor LFTs. Systemic azoles: monitor LFTs (hepatotoxicity risk)."
+  },
+  {
+    "atc_code": "D02",
+    "title": "EMOLLIENTS AND PROTECTANTS",
+    "pathophysiology": "Dry skin (xerosis) results from reduced stratum corneum hydration. Barrier dysfunction \u2192 increased TEWL, irritation, eczema.",
+    "pharmacology": "Emollients: occlusive oils/waxes (petrolatum, lanolin) + humectants (glycerin, urea) \u2192 restore hydration + reduce TEWL. Protectants (zinc oxide, calamine): physical barrier + mild anti-inflammatory.",
+    "dispensing_guidance": "Apply to damp skin for better hydration. Recommend daily use; cheap and safe. Avoid in infections (occlusion worsens bacterial growth)."
+  },
+  {
+    "atc_code": "D03",
+    "title": "TREATMENT OF WOUNDS AND ULCERS",
+    "pathophysiology": "Chronic wounds (ulcers, burns) fail to heal due to impaired angiogenesis, inadequate matrix remodeling, or persistent infection.",
+    "pharmacology": "Growth factors (PDGF, FGF): promote fibroblast proliferation + angiogenesis. Proteolytic enzymes (collagenase, papain): debride necrotic tissue. Antimicrobials (iodine, silver): prevent infection.",
+    "dispensing_guidance": "Enzymatic debridement: remove eschar 1st (impedes absorption). Apply to wound only (avoid surrounding skin\u2014chemical burn). Regular dressing changes. Gauge effectiveness via healing rate; switch if no improvement in 4 weeks."
+  },
+  {
+    "atc_code": "D04",
+    "title": "ANTIPRURITICS DRUGS",
+    "pathophysiology": "Pruritus (itching) mediated by histamine release from mast cells (allergic) or neuropathic mechanisms (chronic itch-scratch cycle).",
+    "pharmacology": "Antihistamines (diphenhydramine, hydroxyzine): H1 antagonism \u2192 reduced itch sensation. Topical anesthetics (lidocaine, benzocaine): block nociceptors. Corticosteroids (topical): \u2193 inflammation \u2192 reduced cytokine release.",
+    "dispensing_guidance": "Antihistamines: sedating types (diphenhydramine) at night; counsel on drowsiness. Avoid prolonged topical anesthetics (skin sensitization). Low-potency steroids for face/intertriginous areas; higher potency for thickened areas (palms, soles)."
+  },
+  {
+    "atc_code": "D05",
+    "title": "ANTIPSORIATIC DRUGS",
+    "pathophysiology": "Psoriasis: Th17-mediated autoimmunity \u2192 keratinocyte hyperproliferation (normal 28 days \u2192 3-4 days) \u2192 scaling plaques. Eczema: impaired skin barrier + Th2 inflammation \u2192 itching, erythema.",
+    "pharmacology": "Corticosteroids: \u2193 T-cell infiltration + cytokine production. Calcineurin inhibitors (tacrolimus, pimecrolimus): block NFAT \u2192 T-cell inactivation (steroid-sparing). Retinoids (tretinoin, acitretin): normalize keratinocyte differentiation. Vitamin D analogs (calcipotriene): \u2193 keratinocyte proliferation + \u2191 differentiation. Biologics (TNF inhibitors, IL-17 antagonists): systemic immunosuppression.",
+    "dispensing_guidance": "Topical steroids: taper gradually (rebound flare); don't use on face long-term (atrophy). Calcineurin inhibitors: safer for face; no atrophy risk. Retinoids: teratogenic (pregnancy CI); photosensitivity (sunscreen required). Methotrexate (oral): slow response (6-12 weeks); monitor CBC, LFTs. Biologics: expensive; reserved for severe disease."
+  },
+  {
+    "atc_code": "D06",
+    "title": "ANTIBIOTICS AND CHEMOTHERAPEUTICS  FOR DERMATOLOGICAL USE",
+    "pathophysiology": "Bacterial skin infections (impetigo, folliculitis, cellulitis) from Staphylococcus aureus, Streptococcus pyogenes penetrating compromised skin.",
+    "pharmacology": "Beta-lactams (cephalexin, amoxicillin): cell wall synthesis inhibition. Macrolides (erythromycin): protein synthesis inhibition. Fluoroquinolones (ciprofloxacin): DNA gyrase inhibition. Topical antibiotics (mupirocin, bacitracin): local coverage without systemic absorption.",
+    "dispensing_guidance": "Mupirocin: BID-TID x 7-10 days; apply to lesions only (antibiotic stewardship). For impetigo limited to localized area. Systemic antibiotics if spreading or deep involvement. Cover with dressing (infection control)."
+  },
+  {
+    "atc_code": "D07",
+    "title": "TOPICAL DERMATOLOGICAL CORTICOSTEROIDS",
+    "pathophysiology": "Inflammatory skin conditions (contact dermatitis, allergic reactions) involve mast cell degranulation \u2192 histamine \u2192 erythema, edema, pruritus.",
+    "pharmacology": "Corticosteroids: reduce phospholipase A2 \u2192 \u2193 inflammatory mediators (prostaglandins, leukotrienes); block IL-2 production \u2192 T-cell inhibition. Potency varies by formulation (ointment > cream > lotion).",
+    "dispensing_guidance": "Classify by potency: Class I-II (very high) reserved for thick areas (palms, soles), never face. Class V-VII (low) for face, intertriginous areas, children. Ointments for dry areas; creams for weeping lesions; lotions for hairy areas. Taper after 2 weeks (rebound flare with abrupt discontinuation). Monitor for atrophy (thin, shiny skin), striae."
+  },
+  {
+    "atc_code": "D08",
+    "title": "ANTISEPTICS AND DESINFECTANTS",
+    "pathophysiology": "Microbial contamination of wounds/skin requires reduction in bacterial load pre-operatively and for wound care.",
+    "pharmacology": "Chlorhexidine: binds bacterial membranes \u2192 disruption + leakage. Iodine: oxidative damage to proteins, nucleic acids. Alcohol: protein denaturation. Hydrogen peroxide: oxidative damage.",
+    "dispensing_guidance": "Chlorhexidine: safe for large areas; persistent activity (residual effect). Iodine: allergic reaction risk; assess allergy history. Alcohol: avoid in open wounds (painful; tissue damage). H2O2: foaming action aids debris removal; don't use in closed wounds (gas embolism risk)."
+  },
+  {
+    "atc_code": "D10",
+    "title": "ACNE DRUGS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "D11",
+    "title": "OTHER DERMATOLOGICAL DRUGS",
+    "pathophysiology": "Vulvovaginitis: candidiasis (overgrowth in antibiotics/diabetes), bacterial vaginosis (Gardnerella, anaerobes displace Lactobacillus), trichomoniasis (protozoan). Presents with discharge, odor, pruritus.",
+    "pharmacology": "Antifungals (miconazole, clotrimazole): as D01. Antibacterials (metronidazole, clindamycin): nucleic acid synthesis inhibition. Antiprotozoan (metronidazole): disrupts redox balance \u2192 cell death.",
+    "dispensing_guidance": "Vaginal formulations: insert high in vagina at bedtime. Metronidazole: metallic taste, disulfiram-like reaction with alcohol (avoid). Full course essential even if symptoms resolve (recurrence risk). Partner treatment for trichomoniasis. Confirm diagnosis (wet mount) before treatment (antibiotics promote resistance)."
+  },
+  {
+    "atc_code": "G02",
+    "title": "OTHER GYNECOLOGICAL  DRUGS",
+    "pathophysiology": "Menorrhagia (heavy menstrual bleeding): abnormal endometrial hemostasis, structural pathology (fibroids, adenomyosis), or coagulopathy.",
+    "pharmacology": "NSAIDs (mefenamic acid): reduce prostaglandin synthesis \u2192 \u2193 endometrial bleeding. Tranexamic acid: plasmin inhibition \u2192 \u2193 fibrinolysis. Hormonal agents (oral contraceptives, levonorgestrel IUD): stabilize endometrium.",
+    "dispensing_guidance": "Mefenamic acid: start on 1st day of menses; 3-5 days duration. Tranexamic acid: during menses only (not for prophylaxis). Hormonal IUD: reduces bleeding 50-90% but requires insertion skills."
+  },
+  {
+    "atc_code": "G03",
+    "title": "SEX HORMONE  AND MODULATORS OF THE SEX HORMONE",
+    "pathophysiology": "Hormone deficiency/imbalance: estrogen deficiency (menopause, hypogonadism) causes vasomotor symptoms, bone loss, vaginal atrophy. Testosterone deficiency (hypogonadism) causes sexual dysfunction, fatigue, muscle loss.",
+    "pharmacology": "Estrogens (estradiol): nuclear receptor activation \u2192 target gene expression (bone maintenance, lipid metabolism). Progestins: endometrial stabilization (prevent hyperplasia if no hysterectomy). Testosterone: androgen receptor activation \u2192 virilization, sexual function. SERMs (tamoxifen, raloxifene): tissue-selective agonism/antagonism (bone agonism, breast antagonism).",
+    "dispensing_guidance": "HRT: individualized benefit-risk (cardiovascular, cancer risk vs. symptom relief). Transdermal preferred if smoking (avoid first-pass thrombosis). Progestin needed if uterus present (endometrial cancer prevention). Testosterone: teratogenic (pregnancy CI); virilizing. Monitor bone density on HRT + cessation (bone loss accelerates)."
+  },
+  {
+    "atc_code": "G04",
+    "title": "UROLOGICAL DRUGS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "H01",
+    "title": "PITUITARY AND HYPOTHALAMIC HORMONES AND ANALOGUES",
+    "pathophysiology": "Anterior pituitary hormone deficiency: GH deficiency \u2192 short stature, metabolic dysfunction. TSH deficiency \u2192 secondary hypothyroidism. ACTH deficiency \u2192 adrenal insufficiency. Prolactin excess (prolactinoma) \u2192 galactorrhea, hypogonadism.",
+    "pharmacology": "GH (somatropin): IGF-1 synthesis \u2192 anabolic effects (bone, muscle, metabolism). GnRH agonists (leuprolide): initial agonism \u2192 downregulation (\u2193 LH/FSH). ACTH (cosyntropin): stimulates adrenal cortex \u2192 cortisol production (diagnostic). Vasopressin (desmopressin): V2 receptor \u2192 aquaporin-2 expression \u2192 water reabsorption.",
+    "dispensing_guidance": "GH: subcutaneous injection; requires growth monitoring (children) or metabolic assessment (adults). Leuprolide: monthly/quarterly IM; flare symptoms initially (\u2191 testosterone before suppression\u2014add antagonist). Desmopressin: intranasal for central diabetes insipidus; adjust to avoid hyponatremia."
+  },
+  {
+    "atc_code": "H02",
+    "title": "SYSTEMIC CORTICOSTEROIDS",
+    "pathophysiology": "Adrenal insufficiency (primary or secondary): inadequate cortisol production \u2192 hypotension, hyponatremia, hyperkalemia, shock. Autoimmune/inflammatory diseases: Th1/Th17-mediated pathology.",
+    "pharmacology": "Glucocorticoids (prednisone, dexamethasone, methylprednisolone): GR activation in lymphocytes \u2192 \u2193 IL-2, TNF-\u03b1, IFN-\u03b3. Vasculitis (endothelial stabilization via \u2193 ICAM-1). Mineralocorticoid effect (aldosterone-like) varies by agent (dexamethasone = minimal, prednisone = moderate).",
+    "dispensing_guidance": "Replacement therapy: morning dosing (mimics circadian cortisol peak). Inflammatory/autoimmune: higher doses; taper gradually (adrenal suppression). Monitor blood glucose, bone density, infections (immunosuppression). Long-term: prophylaxis for osteoporosis (calcium, vitamin D, bisphosphonates). Counsel on stress dosing (\u2191 dose before surgery/illness)."
+  },
+  {
+    "atc_code": "H03",
+    "title": "THYROID THERAPY",
+    "pathophysiology": "Hypothyroidism (autoimmune/iodine deficiency): \u2193 thyroid hormone \u2192 \u2193 metabolic rate, cold intolerance, weight gain, bradycardia, cognitive slowing.",
+    "pharmacology": "Levothyroxine (T4): peripheral conversion to T3 (active form); long half-life (7 days) allows once-daily dosing. T3 (liothyronine): direct active form; faster onset, shorter duration.",
+    "dispensing_guidance": "Levothyroxine: take on empty stomach, 30-60 min before food (absorption reduced by food, calcium, iron). Dose titrated to TSH (goal 0.5-2.5 mIU/L typically). Takes 6-8 weeks to reach steady-state. Many drug interactions (iron, calcium, PPIs \u2193 absorption). Monitor symptoms + labs."
+  },
+  {
+    "atc_code": "J01",
+    "title": "ANTIBACTERIAL DRUGS",
+    "pathophysiology": "Bacterial infections: pathogenic bacteria cause inflammation via toxins, LPS, or direct invasion. Severity ranges from minor (UTI, otitis) to life-threatening (sepsis, meningitis, endocarditis).",
+    "pharmacology": "Beta-lactams (amoxicillin, cephalexin, ceftriaxone): inhibit transpeptidase \u2192 cell wall synthesis inhibition (bactericidal). Macrolides (erythromycin, azithromycin): 30S ribosome inhibition \u2192 protein synthesis (bacteriostatic). Fluoroquinolones (ciprofloxacin, levofloxacin): DNA gyrase/topoisomerase IV inhibition \u2192 DNA replication failure (bactericidal). Tetracyclines (doxycycline, tetracycline): 30S inhibition (bacteriostatic). Aminoglycosides (gentamicin): 30S inhibition \u2192 misreading (bactericidal at high concentrations).",
+    "dispensing_guidance": "Beta-lactams: full course 7-14 days (resistance development + relapse if shortened). Monitor for allergic reactions (cross-reactivity with cephalosporins ~1%). Macrolides: GI upset (take with food); QT prolongation risk (monitor). Fluoroquinolones: tendon rupture risk (elderly, corticosteroid users); avoid in children (cartilage concern). Tetracyclines: photosensitivity (sunscreen); esophageal ulcers if swallowed dry. Aminoglycosides: dose by weight/renal function; nephrotoxicity + ototoxicity monitoring."
+  },
+  {
+    "atc_code": "J02",
+    "title": "ANTIMYCOTIC DRUGS",
+    "pathophysiology": "Systemic fungal infections (candemia, aspergillosis, cryptococcosis): opportunistic in neutropenia, HIV, post-transplant states.",
+    "pharmacology": "Azoles (fluconazole, voriconazole): as D01 (systemic penetration better in azoles than topical). Polyenes (amphotericin B): lipid formulations (liposomal ampho B) reduce nephrotoxicity vs. conventional. Echinocandins (caspofungin): inhibit \u03b2-1,3-glucan synthesis \u2192 unique fungal cell wall target.",
+    "dispensing_guidance": "Amphotericin B: IV infusion (nephrotoxicity risk; baseline + periodic creatinine, K+, Mg2+ monitoring). Premedication with acetaminophen + diphenhydramine reduces infusion reactions. Echinocandins: preferred empiric therapy in many candidiasis cases (less drug interactions). Fluconazole: oral or IV; excellent tissue penetration (meningitis coverage). Monitor LFTs."
+  },
+  {
+    "atc_code": "J04",
+    "title": "ANTIMYCOBACTERIALS",
+    "pathophysiology": "Viral infections: intracellular obligate parasites; range from acute (influenza, COVID) to chronic (HIV, HBV, HCV).",
+    "pharmacology": "Nucleoside analogs (acyclovir, AZT): incorporate into viral DNA \u2192 chain termination. Protease inhibitors (ritonavir, lopinavir): HIV protease inhibition \u2192 immature virion formation. NNRTI (efavirenz, rilpivirine): reverse transcriptase allosteric inhibition. Integrase inhibitors (dolutegravir): HIV integration into host genome blockade. Direct-acting antivirals for HCV (sofosbuvir, daclatasvir): NS5B/NS5A protein targeting.",
+    "dispensing_guidance": "Antiretrovirals: absolute adherence required (>95%) for resistance prevention. Monitor CD4, viral load. Drug interactions (ritonavir is potent CYP3A4 inhibitor\u2014many interactions). Side effects vary (GI with protease inhibitors, rash with NNRTIs). Acyclovir: IV for severe infections; high-dose prophylaxis in immunocompromised."
+  },
+  {
+    "atc_code": "J05",
+    "title": "ANTIVIRAL DRUGS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "J06",
+    "title": "IMMUNE SERA AND IMMUNOGLOBULIN",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "L01A",
+    "title": "ALKYLATING AGENTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "L01B",
+    "title": "ANTIMETABOLITES",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "L01C",
+    "title": "PLANT ALKALOIDS AND OTHER NATURAL PLANTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "L01D",
+    "title": "CYTOTOXIC ANTIBIOTICS AND RELATED SUBSTANCES",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "L01X",
+    "title": "OTHER ANTINEOPLASTIC AGENTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "L02A",
+    "title": "HORMONES AND RELATED AGENTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "L03A",
+    "title": "IMMUNOSTIMULANTS  DRUGS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "M01",
+    "title": "ANTIINFLAMMATORY AND ANTIRHEUMATIC DRUGS",
+    "pathophysiology": "Rheumatoid arthritis: Th1/Th17 cells infiltrate synovium \u2192 TNF-\u03b1, IL-6 production \u2192 osteoclast activation (bone erosion) + synovitis (pain, swelling). Osteoarthritis: cartilage degradation via chondrocyte senescence + mechanical stress.",
+    "pharmacology": "NSAIDs (ibuprofen, indomethacin, diclofenac): COX-1/2 inhibition \u2192 \u2193 prostaglandins (pain, inflammation). DMARDs (methotrexate, hydroxychloroquine, sulfasalazine): slow-acting; various mechanisms (folate antagonism, autophagy, TNF modulation). Biologics (TNF inhibitors, IL-6 antagonists): targeted immunosuppression. Corticosteroids: as H02 (intra-articular injections for localized inflammation).",
+    "dispensing_guidance": "NSAIDs: GI upset (use gastroprotection\u2014PPI or misoprostol); cardiovascular risk (especially COX-2 selective); renal dysfunction with chronic use. Monitor BP, renal function. Avoid in PUD history. Methotrexate: monitor CBC, LFTs; teratogenic (pregnancy CI); folate supplementation. Biologics: infection risk (TB screening mandatory); expensive; reserve for inadequate NSAID/DMARD response."
+  },
+  {
+    "atc_code": "M02",
+    "title": "TOPICAL PRODUCTS FOR JOINT AND MUSCULAR PAIN",
+    "pathophysiology": "Local musculoskeletal pain from trauma, overuse, inflammation.",
+    "pharmacology": "Topical NSAIDs (diclofenac, ibuprofen): local penetration \u2192 COX inhibition (reduced systemic side effects vs. oral). Capsaicin: TRPV1 desensitization \u2192 reduced pain transmission. Menthol: local cooling + TRPM8 activation \u2192 analgesia.",
+    "dispensing_guidance": "Topical NSAIDs: adjunctive (less systemic exposure but still some absorption\u2014monitor in renal/CV disease). Apply QID; wash hands after (unless treating hands). Capsaicin: 3-4 times daily; initial burning (transient). Warn about contamination on mucous membranes (eye exposure = intense burning)."
+  },
+  {
+    "atc_code": "M03",
+    "title": "MUSCLE RELAXANTS",
+    "pathophysiology": "Muscle spasm from injury, inflammation, or neurological disease (MS, CP) causes pain, limitation of motion.",
+    "pharmacology": "Spinal muscle relaxants (baclofen, tizanidine): GABA-B agonism (baclofen) or \u03b12 agonism (tizanidine) \u2192 inhibition of motor neurons + spinal reflexes. Skeletal muscle relaxants (cyclobenzaprine, methocarbamol): direct smooth muscle effect (mechanism not fully defined).",
+    "dispensing_guidance": "Baclofen: dosing by titration (start 5 mg TID \u2192 20 mg TID); renal impairment requires dose reduction. Risk of spasticity rebound if abruptly discontinued (taper essential). Tizanidine: monitor BP, LFTs (hepatotoxicity rare). Cyclobenzaprine: sedating (take at night); short half-life. Not for prolonged spasticity (limited efficacy)."
+  },
+  {
+    "atc_code": "M04",
+    "title": "ANTIGOUT PREPARATIONS",
+    "pathophysiology": "Gout: monosodium urate crystal deposition in joints \u2192 NLRP3 inflammasome activation \u2192 IL-1\u03b2 release \u2192 intense inflammation.",
+    "pharmacology": "Acute attack: NSAIDs/colchicine: COX inhibition or microtubule disruption \u2192 reduced neutrophil infiltration. Urate-lowering: allopurinol (xanthine oxidase inhibition) or febuxostat (xanthine oxidase inhibitor, selective). Uricosuric agents (probenecid): \u2191 renal urate excretion.",
+    "dispensing_guidance": "Colchicine: GI toxicity (cramping, diarrhea) dose-limiting; monitor renal function (accumulation if CrCl <30). Start prophylaxis 1-2 weeks before urate-lowering (prevent flare). Allopurinol: 1st-line (cheap); titrate by serum urate (goal <6 mg/dL). Febuxostat: alternative if allopurinol contraindicated. Probenecid: adequate fluid intake (prevent stone formation)."
+  },
+  {
+    "atc_code": "N01A",
+    "title": "GENERAL ANESTHETICS",
+    "pathophysiology": "Surgical trauma triggers nociceptor activation \u2192 pain. Consciousness requires thalamic reticular nucleus activity.",
+    "pharmacology": "Local anesthetics (lidocaine, bupivacaine): Na+ channel blockade \u2192 conduction blockade. Topical anesthetics (procaine): surface application. General anesthetics (propofol, thiopental): GABA-A enhancement (CNS depression). Neuromuscular blocking agents (succinylcholine, atracurium): nicotinic acetylcholine receptor antagonism \u2192 paralysis.",
+    "dispensing_guidance": "Local anesthetics: aspirate before injection (prevent IV injection \u2192 cardiotoxicity). Maximum doses by weight. Bupivacaine: cardiotoxic if injected IV (long-acting). Propofol: IV only; hypotension, respiratory depression. Succinylcholine: depolarizing; K+ release (contraindicated in burns, crush injury, renal failure\u2014hyperkalemia risk). Atracurium: non-depolarizing; slower onset but safer."
+  },
+  {
+    "atc_code": "N01B",
+    "title": "LOCAL ANESTHESIA",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "N02B",
+    "title": "OTHER ANALGESICS AND ANTIPYRETICS",
+    "pathophysiology": "Pain: nociceptor activation (mechanical, thermal, chemical stimuli) \u2192 dorsal horn synapse \u2192 ascending tracts \u2192 brain cortex.",
+    "pharmacology": "NSAIDs: as M01. Opioids (morphine, codeine, tramadol): \u03bc-opioid receptor activation \u2192 \u2193 pain signal transmission + \u2191 descending inhibition. Paracetamol (acetaminophen): COX inhibition + CB1 activation \u2192 analgesia. Local anesthetics: as N01.",
+    "dispensing_guidance": "NSAIDs: as M01 (GI, CV, renal risks). Opioids: respiratory depression, addiction risk (titrate cautiously). Monitor respiratory rate, sedation. Tolerance develops \u2192 escalating doses. Naloxone reversal if overdose. Constipation universal (prophylaxis with laxatives). Paracetamol: max 4 g/day (hepatotoxicity); caution in liver disease. Tramadol: SNRI + opioid effect; serotonin syndrome risk (avoid with SSRIs)."
+  },
+  {
+    "atc_code": "N02C",
+    "title": "MIGRAINE MEDICATION",
+    "pathophysiology": "Epilepsy: recurrent seizures from neuronal hyperexcitability (Na+ channel dysfunction, GABA deficiency, glutamate excess).",
+    "pharmacology": "Sodium channel blockers (phenytoin, carbamazepine, lamotrigine): \u2193 neuronal firing frequency. GABA enhancers (valproic acid, benzodiazepines): GABA-A potentiation. Calcium channel blockers (ethosuximide): thalamic T-type blockade (absence seizures). Gabapentin: unknown (GABA analog; not GABA agonist). Levetiracetam: binds SV2A \u2192 synaptic vesicle modulation.",
+    "dispensing_guidance": "Phenytoin: narrow therapeutic window (10-20 mcg/mL); non-linear kinetics. Monitor levels, signs of toxicity (ataxia, nystagmus). Drug interactions (CYP450 inducer). Carbamazepine: aplastic anemia risk (rare; CBC baseline + periodic monitoring). Valproic acid: hepatotoxicity (especially <2 years age); monitor LFTs. Lamotrigine: skin rash (SJS risk if titrated too fast\u2014slow titration mandatory). Levetiracetam: behavioral changes (mood, aggression; counsel patients). Never abruptly discontinue (seizure rebound)."
+  },
+  {
+    "atc_code": "N04A",
+    "title": "ANTICHOLINERGIC AGENTS  FOR PARKINSON",
+    "pathophysiology": "SNpc). Normal SNpc dopaminergic neurons project via nigrostriatal pathway to striatum (putamen/caudate) \u2192 dopamine release onto D1 receptors (direct pathway \u2192 excitation \u2192 movement facilitation) and D2 receptors (indirect pathway \u2192 inhibition \u2192 movement suppression). Net effect of DA: disinhibits thalamus \u2192 cortical motor activation. With >60-70% SNpc neuron loss + >80% striatal dopamine depletion \u2192 clinical PD: resting tremor (4-6 Hz, 'pill-rolling'), rigidity (lead-pipe/cogwheel), bradykinesia (slowness/poverty of movement), postural instability. Non-motor features: autonomic dysfunction (constipation, orthostatic hypotension, urinary urgency), sleep disturbance (REM sleep behaviour disorder \u2014 often precedes motor symptoms by years), hyposmia, depression, cognitive impairment \u2192 dementia. Alpha-synuclein spreads in Braak stages (gut \u2192 brain via vagus; olfactory bulb \u2192 limbic \u2192 neocortex). Secondary parkinsonism: drug-induced (dopamine antagonists \u2014 antipsychotics, metoclopramide), vascular, post-encephalitic, MSA, PSP, CBD.",
+    "pharmacology": "Levodopa (L-DOPA): amino acid precursor to dopamine; crosses blood-brain barrier via large neutral amino acid transporter (LAT1) \u2014 dopamine itself does NOT cross BBB. In brain: aromatic amino acid decarboxylase (AADC) converts L-DOPA \u2192 dopamine in remaining nigrostriatal terminals and astrocytes. Peripherally: 95% converted to dopamine by AADC (nausea, vomiting, hypotension, arrhythmias). Carbidopa/benserazide: peripheral AADC inhibitors (do not cross BBB) \u2192 block peripheral L-DOPA conversion \u2192 \u2191 brain L-DOPA availability + \u2193 peripheral dopamine side effects \u2192 dose of L-DOPA reduced 75%. Levodopa/carbidopa (Sinemet, Madopar): gold standard pharmacotherapy. Long-term L-DOPA: dyskinesias (involuntary choreiform movements) from pulsatile stimulation of sensitized striatal DA receptors; motor fluctuations ('wearing off' \u2014 end-of-dose deterioration; 'on-off' phenomenon). Dopamine agonists (pramipexole, ropinirole, rotigotine patch, cabergoline, bromocriptine): directly stimulate D2/D3 receptors (pramipexole/ropinirole D3>D2; cabergoline D2). Less pulsatile stimulation vs L-DOPA \u2192 lower dyskinesia risk. Monotherapy in younger PD patients to delay L-DOPA. Less effective than L-DOPA. Non-ergot (pramipexole, ropinirole) preferred over ergot (cabergoline, bromocriptine) \u2014 no fibrosis risk. MAO-B inhibitors (selegiline, rasagiline, safinamide): selectively inhibit MAO-B (predominant form in striatum) \u2192 \u2193 dopamine breakdown \u2192 \u2191 striatal dopamine. Modest symptomatic + possible neuroprotective effect. COMT inhibitors (entacapone, tolcapone): inhibit catechol-O-methyltransferase \u2192 \u2193 peripheral L-DOPA degradation \u2192 prolonged L-DOPA half-life \u2192 smoother motor effect \u2192 \u2193 'wearing off'. Entacapone co-formulated with L-DOPA/carbidopa (Stalevo). Tolcapone: more potent but rare fatal hepatotoxicity \u2192 restricted use. Amantadine: weak NMDA antagonist \u2192 reduces dyskinesias; also weak dopaminergic. Anticholinergics (trihexyphenidyl, benztropine): reduce relative cholinergic excess (dopamine normally inhibits striatal cholinergic interneurons \u2014 loss of DA \u2192 cholinergic hyperactivity \u2192 tremor/rigidity). Most useful for tremor in young patients. Avoid in elderly (anticholinergic side effects, cognitive impairment). Apomorphine (SC): potent non-selective DA agonist; subcutaneous injection or pump; used for rescue from 'off' episodes or continuous infusion via pump in advanced PD.",
+    "dispensing_guidance": "L-DOPA/carbidopa: initiate low (100/25 mg TID) and titrate every 1-2 weeks. Take 30-60 min before meals or 2 hours after (protein competes with L-DOPA for LAT1 transport \u2192 delayed or reduced absorption with protein-rich meals; protein redistribution diet in some patients). Nausea: common initially (domperidone \u2014 NOT metoclopramide/prochlorperazine/haloperidol as these cross BBB and worsen parkinsonism); takes 2-4 weeks to resolve. Motor fluctuations: options include increasing dose frequency, adding COMT inhibitor (entacapone) or MAO-B inhibitor, continuous duodenal infusion, or deep brain stimulation (DBS). Controlled-release L-DOPA: less predictable absorption \u2014 generally not preferred except overnight. NEVER abruptly stop L-DOPA (neuroleptic malignant syndrome-like syndrome \u2014 hyperthermia, rigidity, confusion). Dopamine agonists: IMPULSE CONTROL DISORDERS (ICDs) \u2014 pathological gambling, hypersexuality, binge eating, compulsive shopping in 10-17%; screen at every visit; dose reduction or switch if develops (resolve on stopping usually). Orthostatic hypotension (all DA agents, L-DOPA). Daytime somnolence, sleep attacks (sudden sleep onset \u2014 driving risk \u2014 must counsel patient and consider driving fitness; risk highest with dopamine agonists). Leg edema (pramipexole). Hallucinations and psychosis \u2014 dose reduction; if persisting, clozapine (12.5-25 mg at night \u2014 unique non-dopamine-blocking antipsychotic, safe in PD) or quetiapine (off-label). Selegiline: mild amphetamine metabolites (insomnia \u2014 avoid evening doses). Rasagiline: avoid tyramine-rich foods in high doses (weak MAOI properties \u2014 hypertensive crisis). Interactions: tramadol, SSRIs, SNRIs + MAO-B inhibitors \u2192 serotonin syndrome. Apomorphine: severe nausea/vomiting without domperidone pretreatment; rotate injection sites (subcutaneous nodules); QTc prolongation. DBS: refer advanced PD with good L-DOPA response but disabling motor fluctuations/dyskinesias. Neuroprotection: no confirmed neuroprotective treatment in clinical use."
+  },
+  {
+    "atc_code": "N05A",
+    "title": "ANTIPSYCHOTIC  DRUGS",
+    "pathophysiology": "Psychotic disorders \u2014 schizophrenia, schizoaffective disorder, psychotic depression, bipolar mania \u2014 share positive symptoms (hallucinations, delusions, thought disorder) from excessive dopaminergic transmission in mesolimbic pathway (VTA \u2192 nucleus accumbens); and negative symptoms (anhedonia, avolition, flat affect, social withdrawal) and cognitive dysfunction from dopaminergic hypofunction in mesocortical pathway (VTA \u2192 prefrontal cortex). Glutamate hypofunction (NMDA receptor dysfunction) also central \u2014 explains negative symptoms and cognitive features. Dopamine hypothesis: 1950s observation that chlorpromazine (D2 blocker) relieved psychosis; all effective antipsychotics block D2 receptors (minimum 60-65% D2 occupancy for antipsychotic effect; >80% \u2192 EPS). Serotonergic pathway (5-HT2A in prefrontal cortex) modulates dopamine release \u2014 5-HT2A antagonism (atypicals) restores mesocortical dopamine \u2192 \u2193 negative symptoms.",
+    "pharmacology": "First-generation (typical) antipsychotics (FGAs): Haloperidol, chlorpromazine, fluphenazine, perphenazine, trifluoperazine, thioridazine. Potent D2 blockade (nigrostriatal \u2192 EPS; tuberoinfundibular \u2192 hyperprolactinaemia). Chlorpromazine: low-potency, more sedating, more anticholinergic. Haloperidol: high-potency, less sedating, more EPS. Second-generation (atypical) antipsychotics (SGAs): Risperidone, olanzapine, quetiapine, aripiprazole, clozapine, paliperidone, ziprasidone, amisulpride, lurasidone. D2 + 5-HT2A blockade (5-HT2A block in mesocortical pathway \u2192 DA release \u2192 \u2193 negative symptoms; 5-HT2A block in nigrostriatal pathway \u2192 DA release \u2192 offsetting D2 block \u2192 \u2193 EPS). Clozapine: uniquely effective for treatment-resistant schizophrenia (TRS); low D2 affinity/fast dissociation + broad receptor profile (H1, \u03b11, M1, 5-HT2A); associated with agranulocytosis (requires mandatory haematological monitoring); weight gain + metabolic syndrome; seizures; myocarditis/cardiomyopathy; hypersalivation. Aripiprazole: D2/D3 partial agonist (functional antagonist at hyperdopaminergic sites, agonist at hypodopaminergic sites) \u2014 unique 'dopamine system stabilizer'; less weight gain, less prolactin elevation. Quetiapine: metabolized to norquetiapine (antidepressant properties \u2014 NE reuptake inhibition) \u2192 used for bipolar depression. Long-acting injectable (LAI/depot) formulations: paliperidone palmitate (monthly/3-monthly), risperidone microspheres (biweekly), haloperidol decanoate (monthly), aripiprazole lauroxil (monthly/6-weekly) \u2192 bypass first-pass, consistent plasma levels, better adherence in patients with insight/compliance issues.",
+    "dispensing_guidance": "Acute psychosis: oral or IM antipsychotic + benzodiazepine (lorazepam IM) for agitation. Haloperidol 5-10 mg IM for acute control. Extrapyramidal side effects (EPS): Acute dystonia (within hours-days): sustained painful muscle spasm, oculogyric crisis, torticollis \u2014 treat with IM/IV anticholinergic (benztropine 1-2 mg or diphenhydramine 25-50 mg) immediately. Akathisia (within days-weeks): intense subjective restlessness, inability to sit still \u2014 \u03b2-blocker (propranolol 10-30 mg TID) or mirtazapine; reduce dose; switch to SGA. Parkinsonism (weeks): bradykinesia, rigidity, tremor from D2 blockade \u2014 reduce dose; add procyclidine/trihexyphenidyl; switch to atypical. Tardive dyskinesia (TD \u2014 months-years): repetitive involuntary orofacial/limb movements from D2 receptor upregulation (supersensitivity) \u2014 REDUCE/STOP offending drug; may be irreversible; valbenazine/deutetrabenazine (VMAT2 inhibitors) approved for treatment. Neuroleptic malignant syndrome (NMS): life-threatening idiosyncratic reaction \u2014 hyperthermia, lead-pipe rigidity, autonomic instability (BP, HR), altered consciousness, \u2191 CK. STOP antipsychotic immediately; supportive ICU care; dantrolene, bromocriptine. Metabolic syndrome (SGAs \u2014 especially olanzapine, clozapine): weight gain, dyslipidaemia, impaired fasting glucose/T2DM, hypertension. Monitor: weight/BMI, waist circumference, fasting glucose, lipids, BP at baseline, 3 months, annually. Olanzapine: most weight gain of all SGAs (5-10 kg/year). QTc prolongation: all antipsychotics to varying degrees \u2014 ECG at baseline; especially sertindole, ziprasidone, pimozide \u2014 avoid with other QTc-prolonging agents. Prolactin elevation (haloperidol, risperidone, amisulpride \u2191\u2191): galactorrhoea, amenorrhoea, sexual dysfunction, gynecomastia, \u2193 bone density. Clozapine monitoring: MANDATORY weekly FBC for first 18 weeks \u2192 biweekly for next 26 weeks \u2192 monthly (absolute neutrophil count: suspend if ANC <2000, stop if <1500 and NEVER rechallenge with clozapine if ANC <1000). Clozapine dispensing: ONLY through restricted dispensing program (CPMS/CMS). Titrate slowly from 12.5 mg \u2192 max 300-900 mg/day. Sedation, orthostatic hypotension, hypersalivation, constipation (severe \u2014 ileus risk; prescribe laxatives), urinary incontinence, weight gain, seizures (>600 mg/day risk \u2014 add valproate prophylaxis). Myocarditis screening (troponin + CRP weeks 1-4). LAI antipsychotics: ensure adequate plasma levels from oral drug before first LAI injection (especially paliperidone palmitate \u2014 established overlap not needed). Administer by trained staff; gluteal or deltoid; observe after for 3 hours (injection-related reactions)."
+  },
+  {
+    "atc_code": "N05B",
+    "title": "ANXIOLYTIC DRUGS",
+    "pathophysiology": "Anxiety disorders (GAD, panic disorder, social anxiety, specific phobias, PTSD) involve: \u2191 amygdala reactivity (fear circuitry hyperactivity), \u2193 prefrontal cortical inhibition of amygdala, altered HPA axis (CRH hypersecretion \u2192 cortisol), and GABAergic/serotonergic dysfunction. GAD: chronic uncontrollable worry + physical symptoms (muscle tension, fatigue, insomnia, irritability, concentration difficulty). Panic disorder: episodic overwhelming fear with autonomic surge (palpitations, dyspnea, chest pain, dizziness, derealization, fear of dying/losing control). GABA (\u03b3-aminobutyric acid) is the primary inhibitory CNS neurotransmitter: GABA-A receptor is a pentameric ligand-gated Cl\u207b channel \u2192 Cl\u207b influx \u2192 hyperpolarization \u2192 \u2193 neuronal firing. Reduced GABAergic tone in amygdala \u2192 \u2191 anxiety.",
+    "pharmacology": "Benzodiazepines (diazepam, lorazepam, alprazolam, clonazepam, oxazepam, temazepam, midazolam): positive allosteric modulators of GABA-A at benzodiazepine-binding site (\u03b1-subunit adjacent to \u03b3-subunit) \u2192 \u2191 frequency of Cl\u207b channel opening (NOT amplitude \u2014 barbiturates \u2191 duration) \u2192 hyperpolarization \u2192 \u2193 amygdala/limbic hyperactivity \u2192 anxiolytic, sedative, muscle relaxant, anticonvulsant, amnesic. All BZDs are full agonists with similar mechanisms \u2014 differences are pharmacokinetic. Short-acting (lorazepam, oxazepam, temazepam): no active metabolites (safer in elderly/liver disease; less accumulation). Long-acting (diazepam, chlordiazepoxide): active metabolites (self-tapering, useful for BZD withdrawal). Azapirones (buspirone): 5-HT1A partial agonist in raphe nuclei \u2192 \u2193 serotonergic transmission \u2192 anxiolytic (no sedation, no addiction, no respiratory depression, no GABAergic effects). Onset 2-4 weeks. Effective for GAD maintenance. Hydroxyzine: H1 antihistamine + anticholinergic \u2192 sedating anxiolytic; no addiction potential; used for acute anxiety and pruritus. Pregabalin: \u03b12\u03b4 VGCC subunit binding \u2192 \u2193 glutamate release (anxiolytic mechanism). Effective for GAD, social anxiety, PTSD. SSRIs/SNRIs: first-line for chronic anxiety disorders (see N06A) \u2014 onset 4-6 weeks.",
+    "dispensing_guidance": "Benzodiazepines: use for SHORT DURATIONS only (2-4 weeks maximum) due to: tolerance (rapidly develops to sedative/anxiolytic effects \u2014 does not develop to anticonvulsant/amnesic), physical dependence (GABA-A receptor downregulation \u2014 withdrawal syndrome on cessation), cognitive impairment (memory, attention, reaction time \u2014 driving risk), falls in elderly (3x \u2191 hip fracture risk), abuse potential. Prescribe minimum effective dose, lowest potency, for defined short course. Withdrawal syndrome: rebound anxiety, insomnia, tremor, sweating, tachycardia, seizures (can be life-threatening with long-acting, high-dose BZD dependence \u2014 similar to alcohol withdrawal). Taper gradually over weeks-months (equivalent diazepam dose conversion \u2192 diazepam taper 10% reduction per week maximum). Lorazepam: no active metabolites \u2014 preferred in liver disease, elderly. Absorbed IM (diazepam not reliably absorbed IM \u2014 use IV). Buspirone: explain 2-4 week onset (patients expect immediate effect like BZDs \u2014 adherence problem). Prior BZD users respond less well. Pregabalin: titrate from 25-75 mg to 150-450 mg/day for anxiety. Abuse/misuse potential (especially in substance use disorder patients). Monitor weight (\u2191\u2191), dizziness, somnolence. Antidepressants (SSRIs/SNRIs) should be first-line for all chronic anxiety disorders with BZDs reserved only for adjunctive short-term use during initiation of SSRI."
+  },
+  {
+    "atc_code": "N05C",
+    "title": "HYPNOTICS AND SEDATIVES DRUGS",
+    "pathophysiology": "Insomnia: impaired sleep initiation, maintenance, or non-restorative sleep causing daytime impairment. Pathophysiology: hyperarousal model \u2014 \u2191 activity of ascending arousal systems (noradrenergic locus coeruleus, serotonergic raphe, histaminergic tuberomammillary nucleus, orexinergic lateral hypothalamus, cholinergic basal forebrain) fails to be inhibited by sleep-promoting VLPO (ventrolateral preoptic nucleus \u2014 GABAergic/galaninergic). Chronic insomnia: conditioned hyperarousal (Spielman 3-P model: predisposing \u00d7 precipitating \u00d7 perpetuating factors). Sleep architecture: NREM (N1-light, N2-spindles/K-complexes, N3-slow wave) and REM cycling every 90 min; deep sleep predominantly early night, REM increases toward morning.",
+    "pharmacology": "Z-drugs (zopiclone, zolpidem, zaleplon): non-benzodiazepine GABA-A positive allosteric modulators (similar to BZDs but more selective for \u03b11-subunit containing GABA-A receptors \u2014 sedation, amnesia; less anxiolysis, muscle relaxation than classic BZDs). Short-acting (zaleplon t\u00bd 1 hr, zolpidem t\u00bd 2 hr, zopiclone t\u00bd 5 hr). Melatonin: endogenous hormone secreted by pineal gland (MT1/MT2 receptor agonism) in response to darkness (circadian phase marker) \u2192 \u2193 alertness + synchronization of circadian rhythm. Modest hypnotic effect; most useful for jet lag and circadian rhythm disorders. Ramelteon: MT1/MT2 agonist (more potent than melatonin). Low-dose doxepin: H1 antagonism at 3-6 mg \u2192 sleep maintenance insomnia (distinct from antidepressant doses). Orexin receptor antagonists (suvorexant): blocks OX1R and OX2R \u2192 \u2193 arousal signal from lateral hypothalamus \u2192 promotes sleep without GABAergic CNS depression.",
+    "dispensing_guidance": "First-line for chronic insomnia: Cognitive Behavioural Therapy for Insomnia (CBT-I) \u2014 superior to pharmacotherapy for long-term outcomes; includes stimulus control, sleep restriction, relaxation, cognitive restructuring, sleep hygiene. Pharmacotherapy adjunctive or short-term only. Z-drugs: similar risks to benzodiazepines (tolerance, dependence, cognitive impairment, parasomnia \u2014 sleepwalking/complex sleep-related behaviours with zolpidem; avoid with alcohol). Prescribe for 2-4 weeks. Elderly: \u2191 risk falls, cognitive impairment, morning sedation (half-life prolonged in elderly) \u2014 use lowest dose; zopiclone 3.75 mg (half-tablet) in elderly (vs. 7.5 mg adults). Zolpidem gender difference: women clear more slowly \u2192 FDA lowered dose recommendation for women (5 mg vs 10 mg). Melatonin: 2-5 mg 30-60 min before bedtime; most useful for circadian phase disorders (shift work, jet lag). Low dependence risk. Antihistamines (diphenhydramine, promethazine): rapid tolerance (days) \u2192 ineffective for chronic insomnia; next-day sedation; anticholinergic (elderly \u2014 avoid per Beers criteria). Address comorbidities contributing to insomnia (pain, depression, anxiety, OSA, restless legs \u2014 treat RLS with dopamine agonists, iron supplementation)."
+  },
+  {
+    "atc_code": "N06A",
+    "title": "ANTIDEPRESSANTS DRUGS",
+    "pathophysiology": "Major depressive disorder (MDD): monoamine hypothesis \u2014 deficiency of serotonin (5-HT), norepinephrine (NE), and dopamine (DA) in limbic system and prefrontal cortex. More contemporary: neuroplasticity hypothesis \u2014 \u2193 BDNF (brain-derived neurotrophic factor) \u2192 hippocampal atrophy and synaptic loss in PFC. HPA axis dysregulation (\u2191 cortisol \u2192 glucocorticoid receptor downregulation in hippocampus \u2192 \u2193 negative feedback \u2192 chronically elevated cortisol \u2192 hippocampal damage). Inflammatory hypothesis \u2014 \u2191 IL-6, TNF-\u03b1, IL-1 activate IDO (indoleamine 2,3-dioxygenase) \u2192 tryptophan \u2192 kynurenine (not serotonin) \u2192 \u2193 5-HT + neurotoxic kynurenines. Treatment with antidepressants: latency of 4-6 weeks before clinical benefit (adaptation of receptor sensitivity, \u2191 BDNF, neurogenesis required). All effective antidepressants ultimately \u2191 monoaminergic transmission via different mechanisms. Dysthymia: chronic lower-grade depression \u22652 years. Bipolar depression: depressive episodes in bipolar disorder (antidepressants may trigger mania \u2014 use with mood stabilizer).",
+    "pharmacology": "SSRIs (fluoxetine, sertraline, paroxetine, citalopram, escitalopram, fluvoxamine): inhibit SERT (serotonin transporter) \u2192 \u2191 synaptic 5-HT \u2192 initial autoreceptor desensitization (weeks) \u2192 sustained 5-HT effect. Escitalopram/citalopram: most serotonin-selective (fewest drug interactions). Fluoxetine: longest half-life (t\u00bd 1-4 days; active metabolite norfluoxetine t\u00bd 7-15 days) \u2192 less discontinuation syndrome; potential for prolonged drug interactions. Paroxetine: most anticholinergic SSRI; shortest half-life \u2192 worst discontinuation syndrome; most CYP2D6 inhibition. SNRIs (venlafaxine, desvenlafaxine, duloxetine, levomilnacipran): inhibit SERT + NET (norepinephrine transporter) \u2192 \u2191 5-HT + NE. Duloxetine: balanced dual reuptake inhibition; also effective for neuropathic pain, fibromyalgia, stress urinary incontinence. Venlafaxine: primarily serotonergic at low doses; NE effect at \u2265150 mg. TCAs (amitriptyline, clomipramine, nortriptyline, imipramine, desipramine): block SERT, NET, H1, M1 (anticholinergic), \u03b11 (hypotension), Na\u207a channels (cardiac \u2014 QRS widening), + multiple others \u2192 broad receptor profile \u2192 sedation + weight gain + cardiac toxicity. Amitriptyline: highest anticholinergic; most sedating. Nortriptyline: active metabolite of amitriptyline; better tolerated; least hypotensive. MAOIs (phenelzine, tranylcypromine, moclobemide): irreversible MAO-A/B inhibition (phenelzine, tranylcypromine) \u2192 \u2191 5-HT, NE, DA; dietary tyramine (normally metabolized by intestinal/hepatic MAO) bypasses MAO \u2192 systemic absorption \u2192 \u2191 NE \u2192 hypertensive crisis (palpitations, headache, flushing, stroke risk). Moclobemide: reversible MAO-A inhibitor (RIMA) \u2014 far safer tyramine interaction profile (reversible displacement by high tyramine). Mirtazapine: \u03b12 autoreceptor antagonist \u2192 \u2191 5-HT and NE release; 5-HT2 and 5-HT3 antagonism (\u2193 nausea, \u2193 insomnia); H1 blockade (sedation, weight gain). Effective as augmentation or monotherapy. Bupropion: NE and DA reuptake inhibitor (NDRI); no serotonergic \u2192 no sexual dysfunction; stimulant-like; also for smoking cessation. Seizure risk dose-dependent (CI in eating disorders, seizure history). Trazodone: SARI (serotonin antagonist and reuptake inhibitor); mainly 5-HT2A antagonism \u2192 insomnia (low dose 50-100 mg). Agomelatine: MT1/MT2 agonist + 5-HT2C antagonist \u2192 normalises circadian rhythmicity + \u2191 NE/DA in PFC. Vortioxetine: SERT inhibitor + 5-HT1A agonist + 5-HT3/7 antagonist \u2192 broad serotonin modulation + cognitive benefits.",
+    "dispensing_guidance": "SSRIs: start low and titrate gradually (activating effects [anxiety, agitation, insomnia] in first 2 weeks \u2014 counsel on transience). Explain 4-6 week full effect onset \u2014 critical for adherence (most patients stop prematurely). Sexual dysfunction (\u2193 libido, anorgasmia, delayed ejaculation) common and persistent (40-60%; consider dose reduction, drug holiday [not for fluoxetine], switching to bupropion/agomelatine/mirtazapine, or adding buspirone). Hyponatraemia (SIADH) \u2014 especially in elderly (check Na\u207a at 2-4 weeks in elderly). GI side effects: nausea (transient \u2014 take with food). Weight change: fluoxetine/bupropion \u2192 weight neutral/\u2193; paroxetine/mirtazapine \u2192 weight \u2191. Discontinuation syndrome (all SSRIs, especially paroxetine/venlafaxine): dizziness, electric-shock sensations ('brain zaps'), nausea, anxiety, flu-like symptoms on abrupt cessation or missed doses \u2014 taper slowly over weeks-months, never abrupt stop. Switching antidepressants: washout period especially from MAOIs (2 weeks after irreversible MAOI before SSRI; 5 weeks after fluoxetine before MAOI) to avoid serotonin syndrome. Serotonin syndrome: excessive serotonergic stimulation (SSRIs + tramadol/fentanyl/linezolid/triptans/St John's Wort/methamphetamine) \u2192 triad of cognitive changes (agitation, confusion), autonomic instability (fever, tachycardia, diaphoresis), and neuromuscular abnormalities (clonus [most specific], hyperreflexia, tremor, myoclonus). Treatment: stop serotonergic drugs, cyproheptadine (5-HT2A antagonist), supportive care. Duration of treatment: first episode uncomplicated MDD \u2014 minimum 6-12 months after remission before tapering (relapse prevention). Two+ episodes or high-risk features: 2 years to indefinite. Recurrent/chronic: long-term. TCAs: anticholinergic side effects (dry mouth, constipation, urinary retention, blurred vision, confusion); orthostatic hypotension; cardiac \u2014 baseline ECG (QRS widening; QTc prolongation \u2014 arrhythmia risk especially in OD). Cardiotoxic in overdose (risk even at moderate excess \u2014 prescribe limited quantities). Avoid in elderly if possible (Beers criteria). Useful: amitriptyline for neuropathic pain (10-75 mg), migraine prophylaxis, insomnia at low doses. MAOIs: tyramine-restricted diet (aged cheeses, cured meats, pickled/fermented foods, red wine, soy sauce, Marmite, broad beans, overripe bananas) during use and 2 weeks after. Multiple drug interactions. Phenelzine/tranylcypromine: last resort for treatment-resistant/atypical depression (hypersomnia, hyperphagia, mood reactivity, rejection sensitivity). Mirtazapine: most sedating at 15 mg (H1 blockade dominant); paradoxically less sedating at higher doses (NE effect \u2191). Weight gain substantial \u2014 use to advantage in depressed anorexic/insomniac patients. Bupropion: available as sustained release (300-450 mg/day). Lowers seizure threshold \u2014 contraindicated: bulimia/anorexia nervosa (electrolyte disturbance + seizure risk), history of seizures, abrupt alcohol withdrawal. Agomelatine: LFT monitoring (hepatotoxic \u2014 ALAT >3x ULN in ~1%; baseline LFTs + at 6, 12 weeks). No antidepressant shows superiority in efficacy \u2014 selection based on side-effect profile, patient comorbidities, prior response, and drug interactions."
+  },
+  {
+    "atc_code": "P01A",
+    "title": "AGENTS AGAINST AMOEBIASIS AND OTHER PROTOZOAL DISEASES",
+    "pathophysiology": "Entamoeba histolytica: ingestion of infective cysts (feco-oral route, contaminated food/water) \u2192 trophozoites in colon \u2192 colonic invasion (penetrate mucosa \u2192 'flask-shaped' ulcers \u2192 bloody/mucoid diarrhoea, colitis) \u2192 hepatic seeding via portal blood \u2192 amoebic liver abscess (single large right lobe abscess; fever + RUQ pain + no intestinal symptoms in 50%). Giardia lamblia: small intestinal trophozoites \u2192 malabsorption syndrome (secretory diarrhoea, bloating, flatulence, pale fatty stools), particularly in travellers, children, and immunocompromised. Cryptosporidium: intracellular intestinal pathogen \u2192 watery diarrhoea (self-limiting in immunocompetent; life-threatening in HIV/AIDS).",
+    "pharmacology": "Metronidazole (as A07): 5-nitroimidazole \u2192 activated by parasitic ferredoxin-like proteins \u2192 cytotoxic radical \u2192 DNA damage \u2192 trophozoite death. Drug of choice for amoebiasis + giardiasis + trichomonas. Tinidazole: similar mechanism; longer half-life \u2192 1-3 day courses (better compliance). Nitazoxanide: inhibits pyruvate:ferredoxin oxidoreductase (PFOR) pathway in anaerobes and protozoa; broader antiprotozoal spectrum (Cryptosporidium \u2014 rare agent effective for this).",
+    "dispensing_guidance": "Intestinal amoebiasis: metronidazole 800 mg TID x 5-10 days (kills invasive trophozoites) FOLLOWED by luminal agent (diloxanide furoate 500 mg TID x 10 days or paromomycin \u2014 kills luminal cysts/trophozoites to prevent relapse). Amoebic liver abscess: metronidazole 750 mg TID x 10 days + aspiration if abscess >10 cm or no clinical response at 3-5 days. Giardiasis: metronidazole 400 mg TID x 5-7 days OR tinidazole 2 g single dose. Alcohol avoidance during and 48 hrs after metronidazole (disulfiram-like reaction). Check stool for ova and parasites \u00d7 3 before treatment (false negatives common). Household members/contacts should be screened and treated simultaneously. Waterborne disease: advise boiling water or use of WHO-approved filter."
+  },
+  {
+    "atc_code": "P01B",
+    "title": "ANTIMALARIALS",
+    "pathophysiology": "Malaria: Plasmodium species (falciparum \u2014 most lethal, SE Asia, Africa; vivax \u2014 worldwide; malariae; ovale; knowlesi \u2014 zoonotic) transmitted by female Anopheles mosquito. Life cycle: sporozoites injected \u2192 hepatic stage (exoerythrocytic replication \u2014 silent; P. vivax/ovale form hypnozoites \u2014 dormant forms causing relapse weeks-years later) \u2192 merozoites released \u2192 red blood cell invasion \u2192 asexual erythrocytic cycle (trophozoite \u2192 schizont \u2192 merozoite release: 48-72 hr cyclical fever) + sexual gametocytes (infect mosquito \u2192 sexual reproduction \u2192 new sporozoites). P. falciparum pathogenesis: infected RBC cytoadherence to microvascular endothelium (PfEMP1 protein-ICAM-1/CD36/chondroitin sulfate A receptor) \u2192 microvascular obstruction \u2192 organ sequestration \u2192 cerebral malaria (coma, seizures), acute lung injury, AKI, severe anaemia, hypoglycaemia. Parasite digests haemoglobin in food vacuole \u2192 haem (toxic) \u2192 polymerised to haemozoin (inert). Artemisinin-Resistant P. falciparum emerging in Greater Mekong Subregion \u2192 treatment failure risk.",
+    "pharmacology": "Chloroquine: lysosomotropic \u2192 concentrates in food vacuole \u2192 inhibits haem polymerisation \u2192 toxic haem accumulates \u2192 parasite lysis. Resistance (P. falciparum chloroquine resistance transporter CRT mutation) widespread. Still effective for P. vivax in many regions. Artemisinin and derivatives (artesunate, artemether, dihydroartemisinin \u2014 ACTs): endoperoxide bridge activated by haem Fe\u00b2\u207a \u2192 alkylating free radical \u2192 oxidative damage to parasite proteins + haem interaction \u2192 rapid parasite clearance. Artesunate IV: drug of choice for severe P. falciparum. ACTs (artemether-lumefantrine [Coartem/Riamet], artesunate-amodiaquine, artesunate-mefloquine): artemisinin clears rapidly (short t\u00bd 1-2 hrs) + partner drug (longer t\u00bd) eliminates residual parasites \u2192 combination prevents resistance. Quinine + doxycycline: inhibit haem polymerisation (quinine) + protein synthesis (doxycycline); IV quinine in severe malaria if artesunate unavailable. Primaquine: 8-aminoquinoline; kills P. vivax/ovale hepatic hypnozoites (only drug class that clears liver stage \u2014 radical cure); also kills gametocytes (\u2193 transmission). Pyrimethamine + sulphadoxine (SP/Fansidar): DHFR + DHPS inhibition (folate antagonism) \u2192 used for intermittent preventive treatment in pregnancy (IPTp) + children (IPTc) in Africa. Resistance widespread for treatment. Mefloquine: haem polymerisation inhibition; long t\u00bd (2-4 weeks); chemoprophylaxis. CNS adverse effects (nightmares, anxiety, psychosis). Atovaquone-proguanil (Malarone): electron transport chain disruption (atovaquone) + proguanil synergy (DHFR inhibition); prophylaxis + treatment; well-tolerated; expensive.",
+    "dispensing_guidance": "Uncomplicated P. falciparum (first-line per Rwanda/WHO guidelines): Artemether-lumefantrine (Coartem) 6-dose regimen: 4 tabs at diagnosis, 4 tabs 8 hrs later, then 4 tabs BID x 2 days. Take with fatty meal (\u2191 lumefantrine absorption \u2191 16x with fat). Complete full course even if asymptomatic. Severe P. falciparum: IV artesunate 2.4 mg/kg at 0, 12, 24 hrs \u2192 then daily until oral tolerated \u2192 switch to oral ACT. Quinine IV (10 mg/kg q8h) if artesunate unavailable. Intensive monitoring: glucose q1-2 hrs (quinine \u2192 hyperinsulinaemia \u2192 hypoglycaemia), ECG (quinine \u2192 QTc prolongation), fluid balance (over-hydration causes pulmonary oedema in severe malaria \u2014 restrict to maintenance), haematocrit, consciousness. Exchange transfusion no longer recommended. P. vivax/ovale radical cure: chloroquine 25 mg/kg over 3 days + primaquine 15 mg OD x 14 days (radical cure). Primaquine: check G6PD status before prescribing (primaquine \u2192 oxidant haemolysis \u2192 severe haemolytic anaemia in G6PD-deficient patients \u2014 common in Africa/Asia/Mediterranean, up to 30% males). If G6PD deficient: 45 mg primaquine once weekly x 8 weeks (safer regimen) or withhold. Pregnancy: chloroquine safe; artemisinin-based ACTs used from 2nd trimester; primaquine contraindicated in pregnancy (G6PD uncertain in fetus). IPTp: SP 3 doses (at 16, 28, 36 weeks) for pregnant women in endemic areas. Malaria prophylaxis for travellers (outbound): atovaquone-proguanil (most tolerable, no G6PD concern), doxycycline, or mefloquine depending on destination, duration, tolerability. ALWAYS check updated travel medicine guidelines (CDC, WHO, TMVC) for resistance patterns by specific region. Chemoprophylaxis must start before travel, continue during, and after return (product-specific timing)."
+  },
+  {
+    "atc_code": "P02C",
+    "title": "ANTINEMATODALS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "P02D",
+    "title": "ANTICESTODALS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "P03",
+    "title": "ECTOPARASITICIDES, INCLUDING SCABICIDES, INSECTICIDES AND REPELLENTS",
+    "pathophysiology": "Ectoparasites infest the skin surface. Scabies: Sarcoptes scabiei var. hominis mite burrows into stratum corneum \u2192 lays eggs \u2192 intensely pruritic sensitisation reaction (IgE + cell-mediated). Highly contagious (close skin-to-skin contact). Norwegian (crusted) scabies: hyperinfection in immunocompromised \u2192 thousands of mites \u2192 scales, minimal itch (blunted immune response). Pediculosis (lice): Pediculus humanus capitis (head lice), P. humanus corporis (body lice \u2014 vector for typhus, relapsing fever, trench fever), Phthirus pubis (pubic/crab lice). Feed on blood \u2192 local reaction, secondary infection. Environmental insecticide resistance common (permethrin/pyrethroid resistance in some populations).",
+    "pharmacology": "Permethrin 5% cream: synthetic pyrethroid \u2192 binds Na\u207a channels in arthropod nerve membranes \u2192 sustained depolarisation \u2192 paralysis \u2192 death. Scabies: applied from neck down (head in infants/elderly/immunocompromised) x 8-12 hrs \u2192 wash off. Malathion 0.5%: organophosphate \u2192 acetylcholinesterase inhibition in insects \u2192 ACh accumulation \u2192 cholinergic toxidrome \u2192 death. Aqueous (alcohol-free) formulations for children/eczema. Ivermectin (oral): as P02 \u2014 also kills scabies mites (licensed for Norwegian scabies and permethrin-resistant scabies). Benzyl benzoate 25% lotion: alternative for scabies; cheaper but more irritating.",
+    "dispensing_guidance": "Scabies: permethrin 5% cream from neck to toes (pay special attention to finger webs, wrists, genitalia, umbilicus); wash off after 8-12 hrs; repeat in 7 days (kills hatched larvae from eggs that survived 1st treatment \u2014 eggs permethrin-resistant). ALL household contacts and sexual partners treated simultaneously (to prevent reinfection \u2014 critical). Treat clothing/bedding (60\u00b0C wash or seal in bag 72 hrs). Post-scabetic itch may persist 2-6 weeks after successful treatment (delayed hypersensitivity reaction) \u2014 oral antihistamines + hydrocortisone 1% cream; do NOT re-treat unnecessarily (inappropriate repeat treatment does not help). Norwegian (crusted) scabies: systemic ivermectin 200 mcg/kg + topical permethrin; ISOLATE patient (highly contagious); treat all contacts regardless of symptoms. Head lice: permethrin 1% lotion 10-min application, repeat in 7-10 days; OR malathion 0.5% aqueous 8-12 hr application. 'Bug-busting': wet combing with fine-tooth comb every 3-4 days x 2 weeks (alternative \u2014 no insecticides). Nit (egg) comb essential regardless of treatment (dead nits remain until physically removed). Treat all household members with live lice simultaneously. Body lice: treat clothing/bedding (lice live in seams, not on skin); personal hygiene; insecticidal treatment of skin if needed."
+  },
+  {
+    "atc_code": "R05D",
+    "title": ". COUGH SUPPRESSANTS EXCLUDING COMBINATIONS WITH EXPECTORENTS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "R06A",
+    "title": "ANTIHISTAMINES FOR SYSTEMIC USE",
+    "pathophysiology": "Allergic rhinitis, urticaria, angioedema, atopic eczema pruritus: as N05B/D04/R01 above. Mast cell and basophil IgE crosslinking \u2192 degranulation \u2192 histamine release from cytoplasmic granules. Histamine acts on: H1 receptors (smooth muscle contraction, \u2191 vascular permeability, pruritus, pain, bronchoconstriction, CNS arousal via histaminergic tuberomammillary neurons), H2 receptors (gastric acid secretion, cardiac effects), H3 receptors (presynaptic autoreceptors \u2014 \u2193 histamine synthesis/release), H4 receptors (immune cell chemotaxis, pruritus). Urticaria: IgE-mediated mast cell activation in dermis \u2192 localised oedema (wheal and flare). Angioedema: deeper submucosal/subcutaneous oedema (potential airway compromise if laryngeal). Anaphylaxis: systemic mast cell/basophil activation \u2192 cardiovascular collapse (\u2193 SVR, \u2191 vascular permeability \u2192 distributive shock), bronchospasm, angioedema.",
+    "pharmacology": "H1 antihistamines: competitive, reversible antagonists at H1 receptors. First-generation (sedating) H1-antihistamines (chlorpheniramine, diphenhydramine, promethazine, hydroxyzine, cyproheptadine): lipophilic \u2192 cross BBB \u2192 sedation (H1 antagonism in histaminergic arousal pathways) + anticholinergic (M1 blockade \u2192 dry mouth, urinary retention, constipation, blurred vision, confusion) effects. Significant CNS depression. Promethazine: also D2 and 5-HT2 antagonism \u2192 antiemetic. Second-generation (non-sedating) H1-antihistamines (cetirizine, loratadine, fexofenadine, desloratadine, levocetirizine, bilastine, rupatadine): lipophobic \u2192 P-gp efflux at BBB \u2192 minimal CNS penetration \u2192 minimal sedation. Longer duration (once-daily). Cetirizine: some anti-eosinophil activity (mild immunomodulatory effect); minor sedation in some individuals. Fexofenadine: P-glycoprotein substrate \u2192 virtually no CNS effects (safest for driving). Rupatadine: also PAF (platelet-activating factor) antagonism.",
+    "dispensing_guidance": "Second-generation antihistamines: preferred for chronic conditions (AR, chronic urticaria) due to better safety/tolerability profile. Once daily (loratadine, fexofenadine, desloratadine, bilastine) for better adherence. Fexofenadine: avoid grapefruit juice and fruit juices (\u2193 OATP-mediated absorption). Cetirizine: may cause drowsiness in some patients despite being 2nd generation \u2014 caution with driving until individual response known. Loratadine: virtually no sedation; extensively CYP-metabolised. Bilastine: no food within 1 hr of dose (impairs absorption). First-generation: sedation used therapeutically (short-term insomnia, procedural sedation). AVOID in: elderly (Beers criteria: falls, delirium, urinary retention, confusion), glaucoma (anticholinergic \u2192 acute closure crisis), BPH (urinary retention), myasthenia gravis. Do NOT drive/operate machinery. Hydroxyzine: sedating, anxiolytic and antipruritic; useful in acute urticaria/eczema pruritus (25-50 mg TID-QID). Antihistamines for acute allergic reactions/urticaria: SECOND-LINE to epinephrine in anaphylaxis (antihistamines do NOT prevent/reverse cardiovascular collapse or bronchospasm \u2014 epinephrine 0.5 mg IM thigh is life-saving first-line treatment). Cetirizine/fexofenadine for non-life-threatening reactions. Chronic spontaneous urticaria: regular daily 2nd-gen antihistamine (not PRN) up to 4x standard dose before considering additional therapy (ciclosporin, omalizumab). Avoid alcohol with all antihistamines (additive CNS depression)."
+  },
+  {
+    "atc_code": "S01C",
+    "title": "ANTI-INFLAMMATORY AND ANTI-INFECTIVE IN COMBINATIONS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "S01X",
+    "title": "OTHER OPHTHALMOLOGICAL PREPARATIONS",
+    "pathophysiology": "Otitis externa (swimmer's ear): disrupted cerumen (earwax) protective barrier + humid environment \u2192 bacterial (Pseudomonas aeruginosa most common, S. aureus) or fungal (Aspergillus niger, Candida) colonization of external ear canal \u2192 oedema, inflammation, pain on tragus pressure, discharge. Risk factors: swimming, excessive ear cleaning/instrumentation, hearing aids, narrow canals, eczema. Otitis media with effusion (glue ear): Eustachian tube dysfunction \u2192 negative middle ear pressure \u2192 transudate accumulation \u2192 hearing loss (conductive) without acute infection. Acute otitis media (AOM): viral URTI \u2192 Eustachian tube inflammation/obstruction \u2192 bacterial superinfection (S. pneumoniae, H. influenzae, M. catarrhalis) in middle ear cleft \u2192 otalgia, fever, bulging TM (tympanic membrane) \u2192 possible TM perforation \u2192 purulent discharge.",
+    "pharmacology": "Topical antibiotics (ofloxacin, ciprofloxacin, framycetin, neomycin, gentamicin): direct antimicrobial in ear canal/middle ear. Fluoroquinolones (ofloxacin, ciprofloxacin): most effective for OE; safe with perforated TM (non-ototoxic \u2014 unlike aminoglycosides). Aminoglycosides (neomycin, gentamicin): ototoxic if TM perforated or in middle ear \u2014 should NOT be used when TM integrity uncertain. Antifungal drops (clotrimazole 1%): for otomycosis. Topical steroids (fluocinolone, betamethasone, dexamethasone): reduce canal oedema and inflammation in otitis externa (particularly important when oedema prevents adequate antibiotic penetration \u2014 consider wick/aural toilet). Combination preparations (antibiotic + steroid): widely used; efficacy superior to single agents for OE with inflammation. Cerumenolytics (docusate sodium, olive oil, sodium bicarbonate, hydrogen peroxide): soften and dislodge impacted cerumen \u2192 easier removal.",
+    "dispensing_guidance": "Ear drop instillation: patient warm drops to body temperature (cold drops \u2192 vertigo/nausea \u2014 caloric effect on vestibular system). Lie on side with affected ear upward. Instil prescribed number of drops \u2192 apply gentle pressure to tragus (pump drops inward) \u2192 remain lying for 5-10 min for adequate contact. Cotton wool plug after. Otitis externa: topical fluoroquinolone (ofloxacin/ciprofloxacin) drops QID x 7 days (superior and safer than aminoglycoside \u00b1 steroid). If severe canal oedema (drops cannot penetrate): insert expandable wick (pope wick/bismuth gauze) and drop onto wick. Keep ear DRY throughout treatment (no swimming; hair wash: cotton wool in ear). AOM treatment: pain relief first (paracetamol \u00b1 ibuprofen). Antibiotics in AOM: watchful waiting appropriate in mild cases \u22652 years age (many resolve without antibiotics in 2-3 days). Antibiotic if: bilateral AOM <2 years, severe symptoms (severe otalgia, high fever, systemically unwell), TM perforation, <6 months age, no improvement in 48-72 hrs. Amoxicillin 80-90 mg/kg/day (high dose for penicillin-resistant S. pneumoniae) x 5-7 days. Amoxicillin-clavulanate if no response at 48-72 hrs (covers \u03b2-lactamase producers). NEVER instil aminoglycoside drops (neomycin, gentamicin) into ears with perforated TM or grommets (tympanostomy tubes) \u2014 cochleotoxicity risk. Fluoroquinolone drops safe with perforated TM/grommets. Cerumen removal: soften with olive oil or sodium bicarbonate drops BID x 1 week \u2192 irrigation with warm water (body temperature); do NOT irrigate if history of perforation, previous ear surgery, or cholesteatoma."
+  },
+  {
+    "atc_code": "V08",
+    "title": "CONTRAST MEDIA",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  },
+  {
+    "atc_code": "V20",
+    "title": "SURGICAL DRESSINGS",
+    "pathophysiology": "",
+    "pharmacology": "",
+    "dispensing_guidance": ""
+  }
+]

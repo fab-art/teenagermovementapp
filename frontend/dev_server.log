@@ -1,0 +1,105 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.0.2:3001
+✓ Ready in 590ms
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3000
+- PID GET /medicines/A01-0 200 in 190ms (next.js: 35ms, generate-params: 28ms, application-code: 155ms)
+ GET /favorites 200 in 1639ms (next.js: 1497ms, application-code: 141ms)
+⨯ ./src/app/layout.tsx:7:1
+Module not found: Can't resolve './client-layout'
+  [90m 5 |[0m [36mimport[0m { [33mAppSidebar[0m } [36mfrom[0m [32m"@/components/app-sidebar"[0m;
+  [90m 6 |[0m [36mimport[0m { [33mTooltipProvider[0m } [36mfrom[0m [32m"@/components/ui/tooltip"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m [33mClientLayout[0m [36mfrom[0m [32m"./client-layout"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m
+  [90m 9 |[0m [36mconst[0m geistSans = [33mGeist[0m({
+  [90m10 |[0m   variable: [32m"--font-geist-sans"[0m,
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/layout.tsx:7:1
+Module not found: Can't resolve './client-layout'
+  [90m 5 |[0m [36mimport[0m { [33mAppSidebar[0m } [36mfrom[0m [32m"@/components/app-sidebar"[0m;
+  [90m 6 |[0m [36mimport[0m { [33mTooltipProvider[0m } [36mfrom[0m [32m"@/components/ui/tooltip"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m [33mClientLayout[0m [36mfrom[0m [32m"./client-layout"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m
+  [90m 9 |[0m [36mconst[0m geistSans = [33mGeist[0m({
+  [90m10 |[0m   variable: [32m"--font-geist-sans"[0m,
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/layout.tsx:7:1
+Module not found: Can't resolve './client-layout'
+  [90m 5 |[0m [36mimport[0m { [33mAppSidebar[0m } [36mfrom[0m [32m"@/components/app-sidebar"[0m;
+  [90m 6 |[0m [36mimport[0m { [33mTooltipProvider[0m } [36mfrom[0m [32m"@/components/ui/tooltip"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m [33mClientLayout[0m [36mfrom[0m [32m"./client-layout"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m
+  [90m 9 |[0m [36mconst[0m geistSans = [33mGeist[0m({
+  [90m10 |[0m   variable: [32m"--font-geist-sans"[0m,
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/layout.tsx:7:1
+Module not found: Can't resolve './client-layout'
+  [90m 5 |[0m [36mimport[0m { [33mAppSidebar[0m } [36mfrom[0m [32m"@/components/app-sidebar"[0m;
+  [90m 6 |[0m [36mimport[0m { [33mTooltipProvider[0m } [36mfrom[0m [32m"@/components/ui/tooltip"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m [33mClientLayout[0m [36mfrom[0m [32m"./client-layout"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m
+  [90m 9 |[0m [36mconst[0m geistSans = [33mGeist[0m({
+  [90m10 |[0m   variable: [32m"--font-geist-sans"[0m,
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/layout.tsx:7:1
+Module not found: Can't resolve './client-layout'
+  [90m 5 |[0m [36mimport[0m { [33mAppSidebar[0m } [36mfrom[0m [32m"@/components/app-sidebar"[0m;
+  [90m 6 |[0m [36mimport[0m { [33mTooltipProvider[0m } [36mfrom[0m [32m"@/components/ui/tooltip"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m [33mClientLayout[0m [36mfrom[0m [32m"./client-layout"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m
+  [90m 9 |[0m [36mconst[0m geistSans = [33mGeist[0m({
+  [90m10 |[0m   variable: [32m"--font-geist-sans"[0m,
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/layout.tsx:7:1
+Module not found: Can't resolve './client-layout'
+  [90m 5 |[0m [36mimport[0m { [33mAppSidebar[0m } [36mfrom[0m [32m"@/components/app-sidebar"[0m;
+  [90m 6 |[0m [36mimport[0m { [33mTooltipProvider[0m } [36mfrom[0m [32m"@/components/ui/tooltip"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m [33mClientLayout[0m [36mfrom[0m [32m"./client-layout"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m
+  [90m 9 |[0m [36mconst[0m geistSans = [33mGeist[0m({
+  [90m10 |[0m   variable: [32m"--font-geist-sans"[0m,
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+✓ Compiled in 88ms

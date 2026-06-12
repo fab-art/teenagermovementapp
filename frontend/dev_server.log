@@ -103,3 +103,8 @@ https://nextjs.org/docs/messages/module-not-found
 
 
 ✓ Compiled in 88ms
+⚠ Found a change in next.config.js. Restarting the server to apply the changes...
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 1475ms
